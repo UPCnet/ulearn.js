@@ -1,6 +1,6 @@
 <tal:jsdefines define="portal_state context/@@plone_portal_state;
                        portal_url portal_state/portal_url"
-               condition="not:viewlet/is_devel_mode">
+               condition="viewlet/is_devel_mode">
 
 <!-- build:js(.) js/vendor.js -->
 <script tal:attributes="src string:${portal_url}/++genweb++static/js/fileinput.js"></script>
@@ -13,10 +13,30 @@
 <script tal:attributes="src string:${portal_url}/++components++root/handlebars/handlebars.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++root/typeahead.js/dist/typeahead.jquery.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++root/underscore/underscore.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++root/datatables/media/js/jquery.dataTables.js"></script>
 <script tal:attributes="src string:${portal_url}/++genweb++static/js/ios-orientationchange-fix.js"></script>
 
 <script tal:attributes="src string:${portal_url}/++genweb++js/main.js"></script>
 <script tal:attributes="src string:${portal_url}/++ulearn++js/ulearn.js"></script>
+
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular/angular.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-animate/angular-animate.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-resource/angular-resource.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-sanitize/angular-sanitize.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-touch/angular-touch.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-ui-utils/jq.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-ui-router/release/angular-ui-router.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-datatables/dist/angular-datatables.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/custom-datatables-checkbox/dom-checkbox.js"></script>
+<!-- endbuild -->
+
+<!-- build:js(.) js/app.js -->
+<script tal:attributes="src string:${portal_url}/++ulearn++app/app.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/controllers/editacl.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/maxclient/MAXClient.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/maxclient/MAXUtils.js"></script>
 <!-- endbuild -->
 
 </tal:jsdefines>

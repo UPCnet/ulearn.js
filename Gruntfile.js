@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist',
+    dist: 'ulearn/js/dist',
     egg: 'ulearn/js'
   };
 
@@ -46,7 +46,11 @@ module.exports = function (grunt) {
         },
         {
           from: 'tal:attributes="src string:${portal_url}/++ulearn++js',
-          to: 'src="ulearn/js/js'
+          to: 'src="ulearn/js/legacy'
+        },
+        {
+          from: 'tal:attributes="src string:${portal_url}/++ulearn++app',
+          to: 'src="ulearn/js/app'
         },
         {
           from: 'condition="viewlet/is_devel_mode"',
@@ -59,7 +63,7 @@ module.exports = function (grunt) {
         overwrite: true,
         replacements: [{
           from: 'src="js',
-          to: 'tal:attributes="src string:${portal_url}/++ulearn++js'
+          to: 'tal:attributes="src string:${portal_url}/++ulearn++dist'
         },
         ]
       }
@@ -217,7 +221,7 @@ module.exports = function (grunt) {
       },
       build: {
         src: [
-          '<%= yeoman.egg %>/js/vendor.js',
+          '<%= yeoman.dist %>/{,*/}*.js',
         ]
       }
     },
@@ -228,7 +232,7 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: '<%= yeoman.egg %>/browser/viewlets_templates/gwjsproductionviewlet.pt',
       options: {
-        dest: '<%= yeoman.egg %>',
+        dest: '<%= yeoman.dist %>',
         flow: {
           html: {
             steps: {
@@ -245,7 +249,7 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.egg %>/browser/viewlets_templates/gwjsproductionviewlet.pt'],
       options: {
-        assetsDirs: ['<%= yeoman.egg %>','<%= yeoman.egg %>/js']
+        assetsDirs: ['<%= yeoman.dist %>']
       }
     },
 
@@ -337,6 +341,23 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      build: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            '*.html',
+            'views/{,*/}*.html',
+            'images/{,*/}*.{webp}',
+            'fonts/{,*/}*.*'
+          ]
+        },
+        ]
+      },
       dist: {
         files: [{
           expand: true,
@@ -425,9 +446,11 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('gw_build', [
+    'clean:dist',
     'replace:build',
     'useminPrepare',
     'concat',
+    'copy:build',
     'uglify',
     'filerev:build',
     'usemin',

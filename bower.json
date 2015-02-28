@@ -15,7 +15,8 @@
     "angular-ui-router": "~0.2.13",
     "angular-ui-select": "~0.9.9",
     "selectize": "~0.12.0",
-    "angular-datatables": "~0.4.0"
+    "angular-datatables": "~0.4.0",
+    "angular-maxclient": "git@github.com:/UPCnet/angular-maxclient.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",

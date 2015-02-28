@@ -8,8 +8,9 @@
  * Controls the community edit ACL widget
  */
 
- GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$log', function($http, plonePortalURL, DTOptionsBuilder, DTColumnDefBuilder, $log){
+ GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$location', '$window', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, $location, $window){
     var self = this;
+    self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [];
     self.acl = [];
 
@@ -40,5 +41,13 @@
     };
     self.selectItem = function ($item) {
         self.acl.push($item);
+    };
+    self.saveAcl = function () {
+        $http.post(
+              plonePortalURL + '/api/communities/'+ self.gwuuid + '/subscriptions',
+              {users: self.acl},
+              {headers: MAXInfo.headers}
+            ).success(function() { $window.location = self.community_url; })
+             .error(function() { console.log('error'); } );
     };
  }]);

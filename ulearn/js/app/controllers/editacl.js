@@ -13,6 +13,7 @@
     self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [];
     self.acl = [];
+    self.active_tab = 'users';
 
     // Default datatable options
     self.dtOptions = DTOptionsBuilder

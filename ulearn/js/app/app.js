@@ -32,5 +32,5 @@ var GenwebApp = angular.module('GenwebApp', [
     'ui.select',
     'ui.jq',
     'datatables',
-    'datatables.bootstrap'
+    'datatables.bootstrap',
   ]);

@@ -12,7 +12,8 @@
     var self = this;
     self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [];
-    self.acl = [];
+    self.users = [];
+    self.groups = [];
     self.active_tab = 'users';
 
     // Default datatable options
@@ -40,13 +41,14 @@
               self.principals = response.data.results;
             });
     };
-    self.selectItem = function ($item) {
-        self.acl.push($item);
+    self.selectUser = function ($item) {
+        $item.role = 'reader';
+        self.users.push($item);
     };
     self.saveAcl = function () {
         $http.post(
               plonePortalURL + '/api/communities/'+ self.gwuuid + '/subscriptions',
-              {users: self.acl},
+              {users: self.users},
               {headers: MAXInfo.headers}
             ).success(function() { $window.location = self.community_url; })
              .error(function() { console.log('error'); } );

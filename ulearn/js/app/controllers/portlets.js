@@ -18,11 +18,10 @@ GenwebApp.directive('maxActivitiesCount', [function() {
             });
         }
         if ($attrs.object === 'user') {
-            $scope.asd = UserActivities.get_count($attrs.username).then(
+            $scope.user_act_promise = UserActivities.get_count($attrs.username).then(
                 function (response) {
                     $element.text(response.headers('X-totalItems'));
                     $scope.user_activities = response.headers('X-totalItems');
-                    $scope.hello = "HOLA!";
             });
         }
       }
@@ -42,7 +41,7 @@ GenwebApp.directive('badge', [function() {
       },
       controller: function($scope, $element, $attrs, plonePortalURL) {
         $scope.portal_url = plonePortalURL;
-        $scope.asd.then(
+        $scope.user_act_promise.then(
           function () {
             if ($scope.user_activities >= $attrs.threshold) {
                 $scope.badge_prefix = '';

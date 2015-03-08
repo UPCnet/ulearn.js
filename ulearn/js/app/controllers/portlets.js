@@ -15,6 +15,7 @@ GenwebApp.directive('maxActivitiesCount', [function() {
             ContextActivities.get_count($attrs.communityHash).then(
                 function (response) {
                     $element.text(response.headers('X-totalItems'));
+                    $scope.context_activities = response.headers('X-totalItems');
             });
         }
         if ($attrs.object === 'user') {
@@ -61,6 +62,32 @@ GenwebApp.directive('lastauthors', [function() {
         } else {
           $scope.last_authors = ContextLastAuthors.query({hash: $attrs.communityHash, limit: 8});
         }
+      }
+    };
+}]);
+
+GenwebApp.directive('communitiesstats', [function() {
+    return {
+      controller: function($scope, $element, $attrs, UsersComments) {
+        UsersComments.get_count($attrs.communityHash).then(
+              function (response) {
+                  $scope.users_comments = response.headers('X-totalItems');
+              });
+      }
+    };
+}]);
+
+GenwebApp.directive('generalstats', [function() {
+    return {
+      controller: function($scope, $element, $attrs, MAXInfo, AllActivities, AllComments) {
+        AllActivities.get_count().then(
+              function (response) {
+                  $scope.all_activities = response.headers('X-totalItems');
+              });
+        AllComments.get_count().then(
+              function (response) {
+                  $scope.all_comments = response.headers('X-totalItems');
+              });
       }
     };
 }]);

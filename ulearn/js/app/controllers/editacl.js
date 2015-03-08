@@ -4,14 +4,20 @@
  * @ngdoc overview
  * @name editACL
  * @description
- * # editACL controller
- * Controls the community edit ACL widget
+ * # editACL controller Controls the community edit ACL widget Directive for
+ *   attribute acl for adquiring the community ACL with the form encoded with
+ *   JSON:
+ *   <input
+ *       type="hidden"
+ *       acl="{"users": [{"role":
+ *       "owner", "id": "victor.fernandez"}],
+ *       "groups": [{"role": "writer", "id": "PAS"}]}">
  */
 
  GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$location', '$window', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, $location, $window){
     var self = this;
     self.community_url = $location.absUrl().replace('/editacl', '');
-    self.principals = [];
+    self.principals = [{id:'No results found'}];
     self.group_results = [];
     self.users = [];
     self.groups = [];
@@ -43,16 +49,14 @@
             });
     };
     self.searchGroup = function (query) {
-        self.group_results = [{id: 'PAS', displayName: 'PAS UPC'},
-                              {id: 'PAS-340', displayName: 'UPCnet'}];
-        // return $http.get(
-        //       plonePortalURL + '/omega13usersearch',
-        //       {params: {q: query, last_query: last_query, last_query_count: last_query_count}}
-        //     ).then(function(response) {
-        //       last_query = query;
-        //       last_query_count = response.data.last_query_count;
-        //       self.principals = response.data.results;
-        //     });
+        // self.group_results = [{id: 'PAS', displayName: 'PAS UPC'},
+        //                       {id: 'PAS-340', displayName: 'UPCnet'}];
+        return $http.get(
+              plonePortalURL + '/omega13groupsearch',
+              {params: {q: query}}
+            ).then(function(response) {
+              self.group_results = response.data.results;
+            });
     };
     self.selectUser = function ($item) {
         $item.role = 'reader';
@@ -71,3 +75,18 @@
              .error(function() { console.log('error'); } );
     };
  }]);
+
+GenwebApp.directive('acl', [function() {
+    return {
+      link: function($scope, $element, $attrs) {
+        var acl = angular.fromJson($attrs.acl);
+        $scope.ctrl.users = acl.users;
+
+        if (acl.groups !== undefined) {
+           $scope.ctrl.groups = acl.groups;
+        } else {
+            $scope.ctrl.groups = [];
+        }
+      }
+    };
+}]);

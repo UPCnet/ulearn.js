@@ -51,3 +51,16 @@ GenwebApp.directive('badge', [function() {
       }
     };
 }]);
+
+GenwebApp.directive('lastauthors', [function() {
+    return {
+      controller: function($scope, $element, $attrs, plonePortalURL, MAXInfo, TimelineLastAuthors, ContextLastAuthors) {
+        $scope.portal_url = plonePortalURL;
+        if ($attrs.type === 'timeline') {
+          $scope.last_authors = TimelineLastAuthors.query({username: MAXInfo.username, limit: 8});
+        } else {
+          $scope.last_authors = ContextLastAuthors.query({hash: $attrs.communityHash, limit: 8});
+        }
+      }
+    };
+}]);

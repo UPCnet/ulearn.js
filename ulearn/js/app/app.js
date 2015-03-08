@@ -33,4 +33,12 @@ var GenwebApp = angular.module('GenwebApp', [
     'ui.jq',
     'datatables',
     'datatables.bootstrap',
+    'angularSpinner',
+    'ngLoadingSpinner'
   ]);
+
+GenwebApp.controller('demo1', ['usSpinnerService', function (usSpinnerService) {
+
+    usSpinnerService.spin('spinner-1');
+
+}])

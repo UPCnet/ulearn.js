@@ -16,11 +16,17 @@
     "angular-ui-select": "~0.9.9",
     "selectize": "~0.12.0",
     "angular-datatables": "~0.4.0",
-    "angular-maxclient": "git@github.com:/UPCnet/angular-maxclient.git"
+    "angular-maxclient": "git@github.com:/UPCnet/angular-maxclient.git",
+    "angular-material": "~0.8.3",
+    "angular-spinner": "~0.6.1",
+    "angular-loading-spinner": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
     "angular-scenario": "~1.3.0"
   },
-  "appPath": "ulearn/js/app"
+  "appPath": "ulearn/js/app",
+  "resolutions": {
+    "angular": ">=1.3.0"
+  }
 }

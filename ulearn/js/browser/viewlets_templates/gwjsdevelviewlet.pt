@@ -30,6 +30,9 @@
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-datatables/dist/angular-datatables.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/custom-datatables-checkbox/dom-checkbox.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/spin.js/spin.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-spinner/angular-spinner.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-loading-spinner/angular-loading-spinner.js"></script>
 <!-- endbuild -->
 
 <!-- build:js(.) js/app.js -->

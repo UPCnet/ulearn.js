@@ -31,8 +31,9 @@ GenwebApp.directive('maxActivitiesCount', [function() {
 
 GenwebApp.directive('badge', [function() {
     return {
-      template: '<img ng-src="{{portal_url}}/{{badge_prefix}}{{badge_png}}" />',
+      template: '<div><img ng-src="{{portal_url}}/{{badge_prefix}}{{badge_png}}" /></div>',
       scope: true,
+      replace: true,
       link: function($scope, $element, $attrs) {
         $scope.badge_png = $attrs.image.replace('.png', '-alt.png');
         $scope.badge_prefix = '/++ulearn++static/images/';

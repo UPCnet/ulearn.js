@@ -63,7 +63,7 @@ module.exports = function (grunt) {
         overwrite: true,
         replacements: [{
           from: 'src="js',
-          to: 'tal:attributes="src string:${portal_url}/++ulearn++dist'
+          to: 'tal:attributes="src string:${portal_url}/++ulearn++dist/js'
         },
         ]
       }

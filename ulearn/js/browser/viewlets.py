@@ -12,7 +12,7 @@ class gwJSDevelViewlet(grok.Viewlet):
     grok.layer(IUlearnTheme)
 
     def is_devel_mode(self):
-        return not api.env.debug_mode()
+        return api.env.debug_mode()
 
 
 class gwJSProductionViewlet(grok.Viewlet):
@@ -21,4 +21,4 @@ class gwJSProductionViewlet(grok.Viewlet):
     grok.layer(IUlearnTheme)
 
     def is_devel_mode(self):
-        return not api.env.debug_mode()
+        return api.env.debug_mode()

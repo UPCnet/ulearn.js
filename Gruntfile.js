@@ -41,6 +41,10 @@ module.exports = function (grunt) {
           to: 'src="../genweb.core/genweb/core/components'
         },
         {
+          from: 'tal:attributes="src string:${portal_url}/++components++ulearn',
+          to: 'src="ulearn/js/components'
+        },
+        {
           from: 'tal:attributes="src string:${portal_url}/++genweb++js',
           to: 'src="../genweb.theme/genweb/theme/js'
         },

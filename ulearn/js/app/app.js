@@ -36,9 +36,3 @@ var GenwebApp = angular.module('GenwebApp', [
     'angularSpinner',
     'ngLoadingSpinner',
   ]);
-
-GenwebApp.controller('demo1', ['usSpinnerService', function (usSpinnerService) {
-
-    usSpinnerService.spin('spinner-1');
-
-}])

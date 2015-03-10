@@ -10,7 +10,7 @@
 
 GenwebApp.directive('maxActivitiesCount', [function() {
     return {
-      controller: function($scope, $element, $attrs, UserActivities, ContextActivities) {
+      controller: ['$scope', '$element', '$attrs', 'UserActivities', 'ContextActivities', function($scope, $element, $attrs, UserActivities, ContextActivities) {
         if ($attrs.object === 'context') {
             ContextActivities.get_count($attrs.communityHash).then(
                 function (response) {
@@ -25,7 +25,7 @@ GenwebApp.directive('maxActivitiesCount', [function() {
                     $scope.user_activities = response.headers('X-totalItems');
             });
         }
-      }
+      }]
     };
 }]);
 
@@ -41,7 +41,7 @@ GenwebApp.directive('badge', [function() {
             $scope.badge_png = $attrs.image;
         }
       },
-      controller: function($scope, $element, $attrs, plonePortalURL) {
+      controller: ['$scope', '$element', '$attrs', 'plonePortalURL', function($scope, $element, $attrs, plonePortalURL) {
         $scope.portal_url = plonePortalURL;
         $scope.user_act_promise.then(
           function () {
@@ -50,37 +50,37 @@ GenwebApp.directive('badge', [function() {
                 $scope.badge_png = $attrs.image;
           }
         });
-      }
+      }]
     };
 }]);
 
 GenwebApp.directive('lastauthors', [function() {
     return {
-      controller: function($scope, $element, $attrs, plonePortalURL, MAXInfo, TimelineLastAuthors, ContextLastAuthors) {
+      controller: ['$scope', '$element', '$attrs', 'plonePortalURL', 'MAXInfo', 'TimelineLastAuthors', 'ContextLastAuthors', function($scope, $element, $attrs, plonePortalURL, MAXInfo, TimelineLastAuthors, ContextLastAuthors) {
         $scope.portal_url = plonePortalURL;
         if ($attrs.type === 'timeline') {
           $scope.last_authors = TimelineLastAuthors.query({username: MAXInfo.username, limit: 8});
         } else {
           $scope.last_authors = ContextLastAuthors.query({hash: $attrs.communityHash, limit: 8});
         }
-      }
+      }]
     };
 }]);
 
 GenwebApp.directive('communitiesstats', [function() {
     return {
-      controller: function($scope, $element, $attrs, UsersComments) {
+      controller: ['$scope', '$element', '$attrs', 'UsersComments', function($scope, $element, $attrs, UsersComments) {
         UsersComments.get_count($attrs.communityHash).then(
               function (response) {
                   $scope.users_comments = response.headers('X-totalItems');
               });
-      }
+      }]
     };
 }]);
 
 GenwebApp.directive('generalstats', [function() {
     return {
-      controller: function($scope, $element, $attrs, MAXInfo, AllActivities, AllComments) {
+      controller: ['$scope', '$element', '$attrs', 'MAXInfo', 'AllActivities', 'AllComments', function($scope, $element, $attrs, MAXInfo, AllActivities, AllComments) {
         AllActivities.get_count().then(
               function (response) {
                   $scope.all_activities = response.headers('X-totalItems');
@@ -89,6 +89,6 @@ GenwebApp.directive('generalstats', [function() {
               function (response) {
                   $scope.all_comments = response.headers('X-totalItems');
               });
-      }
+      }]
     };
 }]);

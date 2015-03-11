@@ -36,8 +36,9 @@ GenwebApp.directive('badge', [function() {
       replace: true,
       link: function($scope, $element, $attrs) {
         $scope.badge_png = $attrs.image.replace('.png', '-alt.png');
-        $scope.badge_prefix = '/++ulearn++static/images/';
-        if ($scope.badge_enabled === 'True') {
+        $scope.badge_prefix = '++ulearn++static/images/';
+        if ($attrs.enabled === 'True') {
+            $scope.badge_prefix = '';
             $scope.badge_png = $attrs.image;
         }
       },
@@ -45,7 +46,7 @@ GenwebApp.directive('badge', [function() {
         $scope.portal_url = plonePortalURL;
         $scope.user_act_promise.then(
           function () {
-            if ($scope.user_activities >= $attrs.threshold) {
+            if (parseInt($scope.user_activities, 10) >= parseInt($attrs.threshold, 10)) {
                 $scope.badge_prefix = '';
                 $scope.badge_png = $attrs.image;
           }

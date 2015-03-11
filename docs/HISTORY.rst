@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.1 (unreleased)
+1.1 (2015-03-11)
 ----------------
 
-- Nothing changed yet.
-
+* Fix comparision of strings and new build. [Victor Fernandez de Alba]
 
 1.0 (2015-03-11)
 ----------------

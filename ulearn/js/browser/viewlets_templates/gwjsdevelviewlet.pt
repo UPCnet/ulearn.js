@@ -33,12 +33,21 @@
 <script tal:attributes="src string:${portal_url}/++components++ulearn/spin.js/spin.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-spinner/angular-spinner.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-loading-spinner/angular-loading-spinner.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/ngDialog/js/ngDialog.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-sweetalert/SweetAlert.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/sweetalert/lib/sweet-alert.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-translate/angular-translate.js"></script>
 <!-- endbuild -->
 
 <!-- build:js(.) js/app.js -->
 <script tal:attributes="src string:${portal_url}/++ulearn++app/app.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/translations.js"></script>
 <script tal:attributes="src string:${portal_url}/++ulearn++app/controllers/editacl.js"></script>
-<script tal:attributes="src string:${portal_url}/++ulearn++app/controllers/portlets.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/portlets/directives.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/portlets/controllers.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/components/alert.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/community/controllers.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/community/directives.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-maxclient/MAXClient.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-maxclient/MAXUtils.js"></script>
 <!-- endbuild -->

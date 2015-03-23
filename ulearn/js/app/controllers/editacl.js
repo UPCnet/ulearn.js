@@ -14,7 +14,7 @@
  *       "groups": [{"role": "writer", "id": "PAS"}]}">
  */
 
- GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$location', '$window', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, $location, $window){
+ GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'DTTranslations', '$location', '$window', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, DTTranslations, $location, $window){
     var self = this;
     self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [{id:'No results found'}];
@@ -23,10 +23,14 @@
     self.groups = [];
     self.active_tab = 'users';
 
+    // Detect language
+    var language = angular.element('html').attr('lang');
+
     // Default datatable options
-    self.dtOptions = DTOptionsBuilder
-        .newOptions().withPaginationType('full_numbers')
-        .withBootstrap();
+    self.dtOptions = DTOptionsBuilder.newOptions()
+        .withPaginationType('full_numbers')
+        .withBootstrap()
+        .withLanguage(DTTranslations[language]);
 
     self.dtColumnDefs = [
         DTColumnDefBuilder.newColumnDef(0),
@@ -34,6 +38,7 @@
         DTColumnDefBuilder.newColumnDef(2).withOption('sSortDataType', 'dom-checkbox'),
         DTColumnDefBuilder.newColumnDef(3).withOption('sSortDataType', 'dom-checkbox'),
         DTColumnDefBuilder.newColumnDef(4).withOption('sSortDataType', 'dom-checkbox'),
+        DTColumnDefBuilder.newColumnDef(5).notSortable()
     ];
 
     var last_query = '';
@@ -66,13 +71,19 @@
         $item.role = 'reader';
         self.groups.push($item);
     };
+    self.deleteUser = function ($item) {
+      self.users.pop($item);
+    };
+    self.deleteGroup = function ($item) {
+      self.groups.pop($item);
+    };
     self.saveAcl = function () {
         $http.post(
               plonePortalURL + '/api/communities/'+ self.gwuuid + '/subscriptions',
               {users: self.users, groups: self.groups},
-              {headers: MAXInfo.headers}
-            ).success(function() { $window.location = self.community_url; })
-             .error(function() { console.log('error'); } );
+              {headers: MAXInfo.headers})
+          .success(function() { $window.location = self.community_url; })
+          .error(function() { console.log('error'); } );
     };
  }]);
 

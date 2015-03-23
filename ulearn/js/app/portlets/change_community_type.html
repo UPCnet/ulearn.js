@@ -1,0 +1,18 @@
+
+<div class="ngdialog-message changeCommunityType">
+    <h2>Canvi de tipus de comunitat</h2>
+    <div ng-class="{selected: selected === 'Closed'}" ng-click="selected='Closed'">
+        Closed
+    </div>
+    <div ng-class="{selected: selected === 'Open'}" ng-click="selected='Open'">
+        Open
+    </div>
+    <div ng-class="{selected: selected === 'Organizative'}" ng-click="selected='Organizative'">
+        Organizative
+    </div>
+    <button class="btn btn-large btn-comunitat"
+            ng-disabled="selected === ngDialogData.community_type"
+            ng-click="changeCommunityType(selected)">
+            Guarda
+    </button>
+</div>

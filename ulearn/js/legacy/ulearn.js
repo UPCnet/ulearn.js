@@ -209,10 +209,10 @@ $(document).ready(function (event) {
         });
     };
 
-    $("#subscribealert").on("click", "a", function (event) {
-        var options = {wsURL: "/toggle-subscribe"};
-        subscribe_to_community(event, options);
-    });
+    // $("#subscribealert").on("click", "a", function (event) {
+    //     var options = {wsURL: "/toggle-subscribe"};
+    //     subscribe_to_community(event, options);
+    // });
 
     $("#subscribeupgradealert").on("click", "a", function (event) {
         var options = {wsURL: "/upgrade-subscribe"};

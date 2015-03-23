@@ -35,4 +35,8 @@ var GenwebApp = angular.module('GenwebApp', [
     'datatables.bootstrap',
     'angularSpinner',
     'ngLoadingSpinner',
+    'ngDialog',
+    'oitozero.ngSweetAlert',
+    'custom.ui.bootstrap',
+    'pascalprecht.translate'
   ]);

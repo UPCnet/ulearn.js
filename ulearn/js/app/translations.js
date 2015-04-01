@@ -22,7 +22,15 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OWNER': 'Owner',
       'ACTIONS': 'Actions'
     },
-    'FOO': 'This is a paragraph'
+    'ALLCOMMUNITIES_VIEW': {
+      'FAVORITEDERROR': 'There was an error while favoriting/unfavoriting the community.',
+      'SUBSCRIBEERROR': 'There was an error while subscribing the community.',
+      'UNSUBSCRIBEERROR': 'There was an error while unsubscribing the community.',
+      'CONFIRMDELETE': 'Are you sure that you want to delete this community?',
+      'CONFIRMDELETEBTN': 'Delete',
+      'DELETEDONE': 'Successfully deleted the community.',
+      'DELETEERROR': 'There was an error while deleting the community.'
+    }
   });
 
   $translateProvider.translations('es', {
@@ -46,7 +54,15 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OWNER': 'Propietario',
       'ACTIONS': 'Acciones'
     },
-    'FOO': 'Dies ist ein Paragraph'
+    'ALLCOMMUNITIES_VIEW': {
+      'FAVORITEDERROR': 'Se ha producido un error al intentar hacer favorita a la comunidad.',
+      'SUBSCRIBEERROR': 'Se ha producido un error al intentar suscribirle a la comunidad.',
+      'UNSUBSCRIBEERROR': 'Se ha producido un error al intentar desuscribirle a la comunidad.',
+      'CONFIRMDELETE': '¿Está seguro que quiere eliminar esta comunidad?',
+      'CONFIRMDELETEBTN': 'Eliminar',
+      'DELETEDONE': 'Se ha eliminado la comunidad.',
+      'DELETEERROR': 'Se ha producido un error al intentar eliminar la comunidad.'
+    }
   });
 
   $translateProvider.translations('ca', {
@@ -70,7 +86,15 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OWNER': 'Propietari',
       'ACTIONS': 'Acciones'
     },
-    'FOO': 'Dies ist ein Paragraph'
+    'ALLCOMMUNITIES_VIEW': {
+      'FAVORITEDERROR': 'S\'ha produit un error al intentar fer favorita a la comunitat.',
+      'SUBSCRIBEERROR': 'S\'ha produit un error al intentar suscriure\'l a la comunitat.',
+      'UNSUBSCRIBEERROR': 'S\'ha produit un error al intentar desuscriure\'l a la comunitat.',
+      'CONFIRMDELETE': 'Esteu segurs que voleu esborrar aquesta comunitat?',
+      'CONFIRMDELETEBTN': 'Esborra',
+      'DELETEDONE': 'S\'ha esborrat la comunitat.',
+      'DELETEERROR': 'S\'ha produit un error al intentar esborrar la comunitat.'
+    }
   });
 
   // $translateProvider.preferredLanguage('en');

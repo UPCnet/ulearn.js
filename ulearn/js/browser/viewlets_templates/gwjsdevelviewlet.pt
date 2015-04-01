@@ -37,6 +37,7 @@
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-sweetalert/SweetAlert.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/sweetalert/lib/sweet-alert.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-translate/angular-translate.js"></script>
+<script tal:attributes="src string:${portal_url}/++components++ulearn/angular-utils-pagination/dirPagination.js"></script>
 <!-- endbuild -->
 
 <!-- build:js(.) js/app.js -->
@@ -48,6 +49,7 @@
 <script tal:attributes="src string:${portal_url}/++ulearn++app/components/alert.js"></script>
 <script tal:attributes="src string:${portal_url}/++ulearn++app/community/controllers.js"></script>
 <script tal:attributes="src string:${portal_url}/++ulearn++app/community/directives.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++app/communities/controllers.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-maxclient/MAXClient.js"></script>
 <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-maxclient/MAXUtils.js"></script>
 <!-- endbuild -->

@@ -40,7 +40,7 @@ GenwebApp.controller('subscribeToOpenCommunity', ['_', 'CommunityInfo', 'UserSub
         if (isConfirm) {
           // Do the atomic subscription of the current user
           $http.post(
-            CommunityInfo.community_url + 'subscribe_to_open')
+            CommunityInfo.community_url + 'subscribe')
           .success(function() {
             SweetAlert.swal({
               title: translations['COMMUNITY_SUBSCRIBE.DONE'],

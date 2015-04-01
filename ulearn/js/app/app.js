@@ -38,5 +38,6 @@ var GenwebApp = angular.module('GenwebApp', [
     'ngDialog',
     'oitozero.ngSweetAlert',
     'custom.ui.bootstrap',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'angularUtils.directives.dirPagination'
   ]);

@@ -449,7 +449,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('gw_build', [
+  grunt.registerTask('gwbuild', [
     'clean:dist',
     'replace:build',
     'useminPrepare',

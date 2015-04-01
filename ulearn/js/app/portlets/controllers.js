@@ -53,3 +53,9 @@ GenwebApp.controller('profilePortletModal', ['$scope', '$http', '$timeout', '$wi
   };
 
 }]);
+
+GenwebApp.controller('homeTopPageMenuButtons', ['ngDialog', function (ngDialog) {
+  var self = this;
+  self.active_tab = 'stream';
+
+}]);

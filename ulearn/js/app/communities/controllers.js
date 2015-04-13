@@ -14,16 +14,25 @@ GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 
   self.user_subscriptions = [];
   self.user_communities = [];
 
-  $http.get(plonePortalURL+'/api/communities')
+  self.prom_allcommunities = $http.get(plonePortalURL+'/api/communities')
     .then(function (response) {
+      // All the visible communities for the current user (Open and Closed) used
+      // in the iterator of the allcommunities view
       self.communities = response.data;
     }
   );
 
-  UserSubscriptions.query({username: MAXInfo.username, limit: 0})
+  UserSubscriptions.query({username: MAXInfo.username, limit: 0, tags: '[COMMUNITY]'})
     .$promise.then(function (response) {
+      // Holds the list of the URLs of the current user subscriptions
       self.user_subscriptions = _.pluck(response, 'url');
-      self.user_communities = _.filter(response, function (r) {return _.contains(r.tags, '[COMMUNITY]');});
+      // The user's current subscribed communities full info (merged from all
+      // the site's communities self.communities and self.user_subscriptions
+      self.prom_allcommunities.then(function () {
+        self.user_communities = _.filter(self.communities, function (r) {
+          return _.contains(self.user_subscriptions, r.url);
+        });
+      });
   });
 
   self.toggleFavorite = function (community) {
@@ -67,7 +76,7 @@ GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 
         community.favorited = false;
       })
       .error(function (response) {
-        $translate(['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'])
+        $translate(['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'])
          .then(function (translations) {
           SweetAlert.swal({
             title:'Error',

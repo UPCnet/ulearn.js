@@ -3,14 +3,14 @@ $(document).ready(function (event) {
     jarn.i18n.loadCatalog('ulearn');
     _ulearn_i18n = jarn.i18n.MessageFactory('ulearn');
 
-    customizedInput = false;
+    // customizedInput = false;
 
-    $('#addModal').on('shown', function (e) {
-        if (!customizedInput) {
-            customizedInput = true;
-            $('[type=file]').customFileInput();
-            }
-    });
+    // $('#addModal').on('shown', function (e) {
+    //     if (!customizedInput) {
+    //         customizedInput = true;
+    //         $('[type=file]').customFileInput();
+    //         }
+    // });
 
     // $('#editModal').on('shown', function (e) {
     //     if (!customizedInput) {

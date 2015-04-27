@@ -19,6 +19,18 @@ $(document).ready(function (event) {
     //         }
     // });
 
+    // Favorites on dexterity objects
+    $('#object-favorite').on('click', '.favorite', function(event) {
+      event.preventDefault();
+      var dexterity_url = $(this).data()['dextobject'];
+      $.get(dexterity_url + '/toggle-favorite');
+      if ($('i', this).hasClass('fa-star')) {
+        $('i', this).addClass('fa-star-o').removeClass('fa-star');
+      } else {
+        $('i', this).addClass('fa-star').removeClass('fa-star-o');
+      }
+    });
+
     // Favorites on community list
     // $('#communities-view').on('click', '.favorite', function(event) {
     //   event.preventDefault();

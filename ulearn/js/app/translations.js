@@ -30,6 +30,9 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETEBTN': 'Delete',
       'DELETEDONE': 'Successfully deleted the community.',
       'DELETEERROR': 'There was an error while deleting the community.'
+    },
+    'EDITACL_VIEW': {
+      'DESCRIPTION': 'There was an error while changing permissions on the current community. Please try again later.'
     }
   });
 
@@ -62,6 +65,9 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETEBTN': 'Eliminar',
       'DELETEDONE': 'Se ha eliminado la comunidad.',
       'DELETEERROR': 'Se ha producido un error al intentar eliminar la comunidad.'
+    },
+    'EDITACL_VIEW': {
+      'DESCRIPTION': 'Se ha producido un error al intentar cambiar los permisos a la comunidad. Por favor, inténtelo de nuevo más tarde.'
     }
   });
 
@@ -94,6 +100,9 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETEBTN': 'Esborra',
       'DELETEDONE': 'S\'ha esborrat la comunitat.',
       'DELETEERROR': 'S\'ha produit un error al intentar esborrar la comunitat.'
+    },
+    'EDITACL_VIEW': {
+      'DESCRIPTION': 'S\'ha produit un error al intentar canviar els permisos de la comunitat. Si us plau, torneu a intentar-ho més tard.'
     }
   });
 

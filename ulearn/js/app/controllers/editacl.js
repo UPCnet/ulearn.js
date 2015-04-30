@@ -14,7 +14,7 @@
  *       "groups": [{"role": "writer", "id": "PAS"}]}">
  */
 
- GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'DTTranslations', '$location', '$window', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, DTTranslations, $location, $window){
+ GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'DTTranslations', '$location', '$window', 'SweetAlert', '$translate', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, DTTranslations, $location, $window, SweetAlert, $translate){
     var self = this;
     self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [{id:'No results found'}];
@@ -82,8 +82,19 @@
               plonePortalURL + '/api/communities/'+ self.gwuuid + '/subscriptions',
               {users: self.users, groups: self.groups},
               {headers: MAXInfo.headers})
-          .success(function() { $window.location = self.community_url; })
-          .error(function() { console.log('error'); } );
+          .success(function() {
+             $window.location = self.community_url;
+           })
+          .error(function() {
+            $translate(['EDITACL_VIEW.DESCRIPTION'])
+             .then(function (translations) {
+              SweetAlert.swal({
+                title:'Error',
+                description: translations['EDITACL_VIEW.DESCRIPTION'],
+                type:'error',
+                timer: 2000});
+            });
+          });
     };
  }]);
 

@@ -23,7 +23,7 @@ $(document).ready(function (event) {
     $('#object-favorite').on('click', '.favorite', function(event) {
       event.preventDefault();
       var dexterity_url = $(this).data()['dextobject'];
-      $.get(dexterity_url + '/toggle-favorite');
+      $.post(dexterity_url + '/toggle-favorite');
       if ($('i', this).hasClass('fa-star')) {
         $('i', this).addClass('fa-star-o').removeClass('fa-star');
       } else {

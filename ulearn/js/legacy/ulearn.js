@@ -392,33 +392,12 @@ $(document).ready(function (event) {
     //Al clicar sobre cualquier campo de los datos del usuario en searchUsers
     //(ubicació, location, telefon, email) rehace la busqueda con ese valor
 
-    $("#userlist").on("click", ".ubicacio .fa-user", function (event) {
-        var query = $(this).parent().find('span').html()
+    $("#userlist").on("click", ".queryable", function (event) {
+        var query = $(this).find('span').html()
         $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
             $('#userlist').html(data);
         });
     });
 
-    $("#userlist").on("click", ".location .fa-building-o", function (event) {
-        var query = $(this).parent().find('span').html()
-        $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
-            $('#userlist').html(data);
-        });
-    });
-
-
-    $("#userlist").on("click", ".telefon .fa-mobile", function (event) {
-        var query = $(this).parent().find('span').html()
-        $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
-            $('#userlist').html(data);
-        });
-    });
-
-    $("#userlist").on("click", ".email .fa-envelope", function (event) {
-        var query = $(this).parent().find('span').html()
-        $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
-            $('#userlist').html(data);
-        });
-    });
 
 });

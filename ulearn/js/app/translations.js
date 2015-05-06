@@ -2,6 +2,9 @@
 
 GenwebApp.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.translations('en', {
+    'COMMON': {
+      'SAVE': 'Save'
+    },
     'COMMUNITY_SUBSCRIBE': {
       'TITLE': 'Do you want to get subscribed to this community?',
       'CANCELBTN': 'Cancel',
@@ -33,10 +36,23 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'There was an error while changing permissions on the current community. Please try again later.'
+    },
+    'CHANGECOMMUNITYTYPE_VIEW': {
+      'TITLE': 'Change the community type',
+      'CLOSED': 'Closed',
+      'OPEN': 'Open',
+      'ORGANIZATIVE': 'Organizative',
+      'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
+      'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
+      'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
+      'ERROR': 'There was an error while changing the community type, please try again later.'
     }
   });
 
   $translateProvider.translations('es', {
+    'COMMON': {
+      'SAVE': 'Guardar'
+    },
     'COMMUNITY_SUBSCRIBE': {
         'TITLE': '¿Quieres suscribirte a esta comunidad?',
         'CANCELBTN': 'Cancel',
@@ -68,10 +84,23 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'Se ha producido un error al intentar cambiar los permisos a la comunidad. Por favor, inténtelo de nuevo más tarde.'
+    },
+    'CHANGECOMMUNITYTYPE_VIEW': {
+      'TITLE': 'Cambiar el tipo de comunidad',
+      'CLOSED': 'Cerrada',
+      'OPEN': 'Abierta',
+      'ORGANIZATIVE': 'Organizativa',
+      'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
+      'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
+      'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
+      'ERROR': 'Se ha producido un error al intentar cambiar el tipo de la comunidad. Por favor, inténtelo de nuevo más tarde.'
     }
   });
 
   $translateProvider.translations('ca', {
+    'COMMON': {
+      'SAVE': 'Desa'
+    },
     'COMMUNITY_SUBSCRIBE': {
         'TITLE': 'Voleu subscrivir-vos a aquesta comunitat?',
         'CANCELBTN': 'Cancel',
@@ -103,6 +132,16 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'S\'ha produit un error al intentar canviar els permisos de la comunitat. Si us plau, torneu a intentar-ho més tard.'
+    },
+    'CHANGECOMMUNITYTYPE_VIEW': {
+      'TITLE': 'Canvia el tipus de comunitat',
+      'CLOSED': 'Tancada',
+      'OPEN': 'Oberta',
+      'ORGANIZATIVE': 'Organitzativa',
+      'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
+      'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
+      'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
+      'ERROR': 'S\'ha produit un error al intentar canviar el tipus de la comunitat. Si us plau, torneu a intentar-ho més tard.'
     }
   });
 

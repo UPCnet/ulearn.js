@@ -393,7 +393,7 @@ $(document).ready(function (event) {
     //(ubicació, location, telefon, email) rehace la busqueda con ese valor
 
     $("#userlist").on("click", ".queryable", function (event) {
-        var query = $(this).find('span').html()
+        var query = $(this).parent().find('span').html()
         $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
             $('#userlist').html(data);
         });

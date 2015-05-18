@@ -32,7 +32,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETE': 'Are you sure that you want to delete this community?',
       'CONFIRMDELETEBTN': 'Delete',
       'DELETEDONE': 'Successfully deleted the community.',
-      'DELETEERROR': 'There was an error while deleting the community.'
+      'DELETEERROR': 'There was an error while deleting the community.',
+      'FAVORITE': 'Favorite',
+      'SUBSCRIBE': 'Subscribe',
+      'UNSUBSCRIBE': 'Unsubscribe',
+      'EDIT': 'Edit',
+      'DELETE': 'Delete'
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'There was an error while changing permissions on the current community. Please try again later.'
@@ -80,7 +85,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETE': '¿Está seguro que quiere eliminar esta comunidad?',
       'CONFIRMDELETEBTN': 'Eliminar',
       'DELETEDONE': 'Se ha eliminado la comunidad.',
-      'DELETEERROR': 'Se ha producido un error al intentar eliminar la comunidad.'
+      'DELETEERROR': 'Se ha producido un error al intentar eliminar la comunidad.',
+      'FAVORITE': 'Favorito',
+      'SUBSCRIBE': 'Suscribir',
+      'UNSUBSCRIBE': 'Desuscribir',
+      'EDIT': 'Editar',
+      'DELETE': 'Borrar'
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'Se ha producido un error al intentar cambiar los permisos a la comunidad. Por favor, inténtelo de nuevo más tarde.'
@@ -128,7 +138,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'CONFIRMDELETE': 'Esteu segurs que voleu esborrar aquesta comunitat?',
       'CONFIRMDELETEBTN': 'Esborra',
       'DELETEDONE': 'S\'ha esborrat la comunitat.',
-      'DELETEERROR': 'S\'ha produit un error al intentar esborrar la comunitat.'
+      'DELETEERROR': 'S\'ha produit un error al intentar esborrar la comunitat.',
+      'FAVORITE': 'Favorit',
+      'SUBSCRIBE': 'Subscriu',
+      'UNSUBSCRIBE': 'Desubscriu',
+      'EDIT': 'Edita',
+      'DELETE': 'Esborra'
     },
     'EDITACL_VIEW': {
       'DESCRIPTION': 'S\'ha produit un error al intentar canviar els permisos de la comunitat. Si us plau, torneu a intentar-ho més tard.'

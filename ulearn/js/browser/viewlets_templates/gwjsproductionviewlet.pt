@@ -4,6 +4,6 @@
 
 <script tal:attributes="src string:${portal_url}/++ulearn++dist/js/vendor.a4f1e787.js"></script>
 
-<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/app.eaa5ee31.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/app.e960f0b8.js"></script>
 
 </tal:jsdefines>

@@ -2,8 +2,8 @@
                        portal_url portal_state/portal_url"
                condition="not: viewlet/is_devel_mode">
 
-<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/vendor.a4f1e787.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/vendor.d0ca753e.js"></script>
 
-<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/app.e960f0b8.js"></script>
+<script tal:attributes="src string:${portal_url}/++ulearn++dist/js/app.1e2dc8f9.js"></script>
 
 </tal:jsdefines>

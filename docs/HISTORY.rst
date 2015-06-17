@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.1 (unreleased)
+2.1 (2015-06-17)
 ----------------
 
-- Nothing changed yet.
-
+* Updated build [Victor Fernandez de Alba]
+* subcribe current user community [Pilar Marinas]
 
 2.0 (2015-05-18)
 ----------------

@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.2 (unreleased)
+2.2 (2015-06-25)
 ----------------
 
-- Nothing changed yet.
-
+* Build JS [Victor Fernandez de Alba]
+* New location of genweb.js [Victor Fernandez de Alba]
 
 2.1 (2015-06-17)
 ----------------

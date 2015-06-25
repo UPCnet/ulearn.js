@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         },
         {
           from: 'tal:attributes="src string:${portal_url}/++components++root',
-          to: 'src="../genweb.core/genweb/core/components'
+          to: 'src="../genweb.js/genweb/js/components'
         },
         {
           from: 'tal:attributes="src string:${portal_url}/++components++ulearn',

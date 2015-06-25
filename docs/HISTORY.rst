@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.3 (unreleased)
+2.3 (2015-06-25)
 ----------------
 
-- Nothing changed yet.
-
+* Update editacl [Victor Fernandez de Alba]
 
 2.2 (2015-06-25)
 ----------------

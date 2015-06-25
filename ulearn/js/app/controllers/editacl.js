@@ -14,7 +14,7 @@
  *       "groups": [{"role": "writer", "id": "PAS"}]}">
  */
 
- GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'DTTranslations', '$location', '$window', 'SweetAlert', '$translate', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, DTTranslations, $location, $window, SweetAlert, $translate){
+ GenwebApp.controller('uLearnEditACL', ['$http', 'plonePortalURL', 'MAXInfo', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'DTTranslations', '$location', '$window', 'SweetAlert', '$translate', '_', function($http, plonePortalURL, MAXInfo, DTOptionsBuilder, DTColumnDefBuilder, DTTranslations, $location, $window, SweetAlert, $translate, _){
     var self = this;
     self.community_url = $location.absUrl().replace('/editacl', '');
     self.principals = [{id:'No results found'}];
@@ -72,10 +72,10 @@
         self.groups.push($item);
     };
     self.deleteUser = function ($item) {
-      self.users.pop($item);
+      self.users = _.without(self.users, _.findWhere(self.users, {id:$item.id}));
     };
     self.deleteGroup = function ($item) {
-      self.groups.pop($item);
+      self.groups = _.without(self.groups, _.findWhere(self.groups, {id:$item.id}));
     };
     self.saveAcl = function () {
         $http.post(

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.5 (unreleased)
+2.5 (2015-06-26)
 ----------------
 
-- Nothing changed yet.
-
+* Fix genweb.js with genweb main.js [Victor Fernandez de Alba]
 
 2.4 (2015-06-25)
 ----------------

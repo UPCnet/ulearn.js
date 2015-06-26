@@ -46,7 +46,7 @@ module.exports = function (grunt) {
         },
         {
           from: 'tal:attributes="src string:${portal_url}/++genweb++js',
-          to: 'src="../genweb.theme/genweb/theme/js'
+          to: 'src="../genweb.js/genweb/js/legacy'
         },
         {
           from: 'tal:attributes="src string:${portal_url}/++ulearn++js',

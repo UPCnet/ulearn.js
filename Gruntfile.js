@@ -18,8 +18,16 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'ulearn/js/dist',
+    dist: '../genweb.cdn/genweb/cdn/dist',
     egg: 'ulearn/js'
+  };
+
+  var config_file = 'config.json';
+  var resource_config = grunt.file.readJSON(config_file);
+  var uglify_options = {
+      sourceMap: true,
+      banner: '/*! <%= uglify.pkg.name %> - v<%= uglify.pkg.version %> - ' +
+      '<%= grunt.template.today("yyyy-mm-dd") %> */'
   };
 
   // Define the configuration for all the tasks
@@ -178,39 +186,19 @@ module.exports = function (grunt) {
     // Empties folders to start fresh
     clean: {
       dist: {
+        options: {force: true},
         files: [{
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
+            // '<%= yeoman.dist %>/{,*/}*',
+            '<%= yeoman.dist %>/ulearn.common.js',
+            '<%= yeoman.dist %>/ulearn.app.js',
             '!<%= yeoman.dist %>/.git{,*/}*'
           ]
         }]
       },
       server: '.tmp'
-    },
-
-    // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
-      }
-    },
-
-    // Automatically inject Bower components into the app
-    wiredep: {
-      app: {
-        src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
-      }
     },
 
     // Renames files for browser caching purposes
@@ -225,122 +213,40 @@ module.exports = function (grunt) {
       },
       build: {
         src: [
-          '<%= yeoman.dist %>/{,*/}*.js',
+          '<%= yeoman.dist %>/ulearn.common.js',
+          '<%= yeoman.dist %>/ulearn.app.js'
         ]
-      }
-    },
-
-    // Reads HTML for usemin blocks to enable smart builds that automatically
-    // concat, minify and revision files. Creates configurations in memory so
-    // additional tasks can operate on them
-    useminPrepare: {
-      html: '<%= yeoman.egg %>/browser/viewlets_templates/gwjsproductionviewlet.pt',
-      options: {
-        dest: '<%= yeoman.dist %>',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
-          }
-        }
-      }
-    },
-
-    // Performs rewrites based on filerev and the useminPrepare configuration
-    usemin: {
-      html: ['<%= yeoman.egg %>/browser/viewlets_templates/gwjsproductionviewlet.pt'],
-      options: {
-        assetsDirs: ['<%= yeoman.dist %>']
-      }
-    },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-
-    htmlmin: {
-      dist: {
-        options: {
-          collapseWhitespace: true,
-          conservativeCollapse: true,
-          collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true,
-          removeOptionalTags: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
       }
     },
 
     // ng-annotate tries to make the code safe for minification automatically
     // by using the Angular long form for dependency injection.
-    ngAnnotate: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
-        }]
+    uglify: {
+      pkg: grunt.file.readJSON('package.json'),
+      common: {
+         options: uglify_options,
+         files: {
+             '<%= yeoman.dist %>/ulearn.common.js': '.tmp/ulearn.common.js'
+        }
+      },
+      app: {
+         options: uglify_options,
+         files: {
+             '<%= yeoman.dist %>/ulearn.app.js': '.tmp/ulearn.app.js'
+        }
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
+    concat: {
+      options: {},
+      common: { files: {'.tmp/ulearn.common.js': resource_config.resources.common.js.development }},
+    },
+
+    ngAnnotate: {
+      options: {
+          ngAnnotateOptions: {}
+      },
+      app: { files: {'.tmp/ulearn.app.js': resource_config.resources.app.js.development }},
     },
 
     // Copies remaining files to places other tasks can use
@@ -418,8 +324,20 @@ module.exports = function (grunt) {
         singleRun: true
       }
     }
+
   });
 
+  grunt.registerTask('updateconfig', function () {
+    if (!grunt.file.exists(config_file)) {
+        grunt.log.error('file ' + config_file + ' not found');
+        return true; //return false to abort the execution
+    }
+
+    resource_config.revision_info = grunt.filerev.summary; //edit the value of json object, you can also use projec.key if you know what you are updating
+
+    grunt.file.write(config_file, JSON.stringify(resource_config, null, 2)); //serialize it back to file
+
+  });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -451,14 +369,16 @@ module.exports = function (grunt) {
 
   grunt.registerTask('gwbuild', [
     'clean:dist',
-    'replace:build',
-    'useminPrepare',
+    // 'replace:build',
+    // 'useminPrepare',
+    'ngAnnotate',
     'concat',
-    'copy:build',
+    // 'copy:build',
     'uglify',
     'filerev:build',
-    'usemin',
-    'replace:postbuild'
+    // 'usemin',
+    // 'replace:postbuild',
+    'updateconfig'
   ]);
 
   grunt.registerTask('build', [

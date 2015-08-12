@@ -192,8 +192,8 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             // '<%= yeoman.dist %>/{,*/}*',
-            '<%= yeoman.dist %>/ulearn.common.js',
-            '<%= yeoman.dist %>/ulearn.app.js',
+            '<%= yeoman.dist %>/ulearn.common.{,*}*.js',
+            '<%= yeoman.dist %>/ulearn.app.{,*}*.js',
             '!<%= yeoman.dist %>/.git{,*/}*'
           ]
         }]

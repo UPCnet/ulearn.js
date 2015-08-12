@@ -31,12 +31,6 @@
     />
 
     <plone:static
-      directory="dist"
-      type="ulearn"
-      name="dist"
-    />
-
-    <plone:static
       directory="components"
       type="components"
       name="ulearn"

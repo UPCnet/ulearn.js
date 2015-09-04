@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.7 (unreleased)
+2.7 (2015-09-04)
 ----------------
 
-- Nothing changed yet.
-
+* Delete dist resource [Victor Fernandez de Alba]
+* more resources [Victor Fernandez de Alba]
+* Finished external resource with config.json based method [Victor Fernandez de Alba]
 
 2.6 (2015-06-26)
 ----------------

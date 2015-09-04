@@ -21,7 +21,7 @@ class gwJSDevelViewlet(grok.Viewlet):
 
     def read_resource_config_file(self):
         ulearnjsegg = pkg_resources.get_distribution('ulearn.js')
-        resource_file = open('{}/config.json'.format(ulearnjsegg.location))
+        resource_file = open('{}/ulearn/js/config.json'.format(ulearnjsegg.location))
         return resource_file.read()
 
     @forever.memoize
@@ -56,7 +56,7 @@ class gwJSProductionViewlet(grok.Viewlet):
 
     def read_resource_config_file(self):
         ulearnjsegg = pkg_resources.get_distribution('ulearn.js')
-        resource_file = open('{}/config.json'.format(ulearnjsegg.location))
+        resource_file = open('{}/ulearn/js/config.json'.format(ulearnjsegg.location))
         return resource_file.read()
 
     @forever.memoize

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.8 (unreleased)
+2.8 (2015-09-04)
 ----------------
 
-- Nothing changed yet.
-
+* Fix config.json location [Carles Bruguera]
 
 2.7 (2015-09-04)
 ----------------

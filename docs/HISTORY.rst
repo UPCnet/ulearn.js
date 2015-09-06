@@ -4,8 +4,7 @@ Changelog
 2.10 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+* Add angular-maxclient to the build [Victor Fernandez de Alba]
 
 2.9 (2015-09-04)
 ----------------

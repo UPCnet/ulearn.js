@@ -368,16 +368,11 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('gwbuild', [
-    'clean:dist',
-    // 'replace:build',
-    // 'useminPrepare',
+    // 'clean:dist',
     'ngAnnotate',
     'concat',
-    // 'copy:build',
     'uglify',
     'filerev:build',
-    // 'usemin',
-    // 'replace:postbuild',
     'updateconfig'
   ]);
 

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.11 (unreleased)
+2.11 (2015-09-09)
 -----------------
 
-- Nothing changed yet.
-
+* Refactor of the new resource viewlet [Victor Fernandez de Alba]
 
 2.10 (2015-09-06)
 -----------------

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.12 (unreleased)
+2.12 (2015-09-10)
 -----------------
 
-- Nothing changed yet.
-
+* search by tags genweb js [Pilar Marinas]
 
 2.11 (2015-09-09)
 -----------------

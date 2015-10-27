@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.13 (unreleased)
+2.13 (2015-10-27)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Solucionar alert suscribir [Pilar Marinas]
 
 2.12 (2015-09-10)
 -----------------

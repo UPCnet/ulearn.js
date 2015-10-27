@@ -13,7 +13,7 @@ GenwebApp.controller('subscribeToOpenCommunity', ['_', 'CommunityInfo', 'UserSub
 
   UserSubscriptions.query({username: MAXInfo.username, limit: 0}).$promise.then(function (response) {
     var url_list = _.pluck(response, 'url');
-    if (!_.contains(url_list, $window.location.href)) {
+    if (!_.contains(url_list, $window.location.href.replace(/\/$/g, ''))) {
         self.show_alert = true;
     }
   });

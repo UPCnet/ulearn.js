@@ -11,7 +11,8 @@
 GenwebApp.value('CommunityInfo', {
     community_url: '',
     community_hash: '',
-    community_gwuuid: ''
+    community_gwuuid: '',
+    community_type: ''
 });
 
 GenwebApp.directive('communityinfo', [function() {
@@ -21,6 +22,7 @@ GenwebApp.directive('communityinfo', [function() {
             CommunityInfo.community_url = $attrs.communityUrl;
             CommunityInfo.community_hash = $attrs.communityHash;
             CommunityInfo.community_gwuuid = $attrs.communityGwuuid;
+            CommunityInfo.community_type = $attrs.communityType;
         }]
     };
 }]);

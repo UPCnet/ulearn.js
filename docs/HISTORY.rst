@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.14 (unreleased)
+2.14 (2015-11-10)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Alert de subscribir solo salga en comunidades abiertas [Pilar Marinas]
 
 2.13 (2015-10-27)
 -----------------

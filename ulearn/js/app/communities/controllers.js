@@ -132,3 +132,18 @@ GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 
     }
   };
 }]);
+
+
+GenwebApp.controller('SharedWithMe', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate) {
+  var self = this;
+  self.currentPage = 1;
+  self.pageSize = 10;
+  self.shareditems = $http.get(plonePortalURL+'/shared_with_me')
+    .then(function (response) {
+      // All the visible communities for the current user (Open and Closed) used
+      // in the iterator of the allcommunities view
+      self.shared_items = response.data;
+    }
+  );
+
+}]);

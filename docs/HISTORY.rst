@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.15 (unreleased)
+2.15 (2015-12-01)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Search users [Pilar Marinas]
+* Shared-with-me controller [Carles Bruguera]
 
 2.14 (2015-11-10)
 -----------------

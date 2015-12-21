@@ -67,3 +67,11 @@ GenwebApp.controller('homeTopPageMenuButtons', ['ngDialog', function (ngDialog) 
   self.active_tab = 'stream';
 
 }]);
+
+GenwebApp.controller('homeTopPageMenuButtonsCA', ['ngDialog', '$scope', function (ngDialog, $scope) {
+  var self = this;
+  self.active_tab = 'stream';
+  $scope.filtered_contents_search_ca_view = 'https://farm4.staticflickr.com/3261/2801924702_ffbdeda927_d.jpg';
+
+
+}]);

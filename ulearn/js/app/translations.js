@@ -1,6 +1,33 @@
 'use strict';
 
-GenwebApp.config(['$translateProvider', function ($translateProvider) {
+GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider', function ($translateProvider, $stateProvider,$urlRouterProvider,$locationProvider) {
+
+    $urlRouterProvider.otherwise('/');
+    $stateProvider
+            .state('root', {
+              url: '/',
+              resolve: {
+                showportlets: function(){
+                      angular.element('#angular-route-view').siblings().show()
+                      angular.element('#home-angular-route-view').parent().parent().find('> * > *').show()
+                      angular.element('#searchinputusers #search').val("")
+                      return;
+                  }
+              }
+            })
+            .state('search', {
+              url: '/search?search',
+              controller: 'SearchUsersController as ctrl',
+              resolve: {
+                hideportlets: function(){
+                      angular.element('#angular-route-view').siblings().hide()
+                      angular.element('#home-angular-route-view').parent().parent().find('> * > *').hide()
+                      return;
+                  }
+              },
+              templateUrl: '++ulearn++app/templates/searchusers.html'
+            })
+
   $translateProvider.translations('en', {
     'COMMON': {
       'SAVE': 'Save'
@@ -51,6 +78,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
       'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
       'ERROR': 'There was an error while changing the community type, please try again later.'
+    },
+    'SEARCHUSERS':{
+      'THINNKERS': 'Thinnkers',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Use the search input to find people. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Showing 100 out of ',
+      'SEARCH': 'Search'
     }
   });
 
@@ -104,6 +137,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
       'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
       'ERROR': 'Se ha producido un error al intentar cambiar el tipo de la comunidad. Por favor, inténtelo de nuevo más tarde.'
+    },
+    'SEARCHUSERS':{
+      'THINNKERS': 'Personas',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Usa el buscador para encontrar personas. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Mostrando 100 de ',
+      'SEARCH': 'Busca'
     }
   });
 
@@ -157,6 +196,12 @@ GenwebApp.config(['$translateProvider', function ($translateProvider) {
       'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
       'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
       'ERROR': 'S\'ha produit un error al intentar canviar el tipus de la comunitat. Si us plau, torneu a intentar-ho més tard.'
+    },
+    'SEARCHUSERS':{
+      'THINNKERS': 'Persones',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Utilitza el cercador per trobar persones. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Mostrant 100 de ',
+      'SEARCH': 'Cerca'
     }
   });
 

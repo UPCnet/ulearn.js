@@ -165,7 +165,7 @@ $(document).ready(function (event) {
       };
     })();
 
-    // User search
+   /* // User search
     $('#searchinputusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         if (query.length > 2 || query.length === 0) {
@@ -177,7 +177,7 @@ $(document).ready(function (event) {
             }, 1000 );
         }
     });
-
+*/
     // # of thinnkinns updater
     $(window).on('maxui-posted-activity', function(event) {
         int_activities = parseInt($('.currentactivity').text(), 10);
@@ -389,18 +389,19 @@ $(document).ready(function (event) {
 
     });
 
-    //Al clicar sobre cualquier campo de los datos del usuario en searchUsers
+
+/*    //Al clicar sobre cualquier campo de los datos del usuario en searchUsers
     //(ubicació, location, telefon, email) rehace la busqueda con ese valor
 
     $("#userlist").on("click", ".queryable", function (event) {
         event.preventDefault()
         event.stopPropagation();
         event.stopImmediatePropagation();
-        var query = $(this).parent().find('span').html()
+        var query = $(this).parent().find('span').html();
         $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
             $('#userlist').html(data);
         });
     });
-
+*/
 
 });

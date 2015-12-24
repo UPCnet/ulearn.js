@@ -10,15 +10,15 @@
  */
 
 // External modularization
-var underscore = angular.module('underscore', []);
-underscore.factory('_', function() {
-  return window._;
-});
-
-var ploneVariables = angular.module('ploneVariables', []);
-ploneVariables.factory('plonePortalURL', function() {
-  return window.portal_url;
-});
+// var underscore = angular.module('underscore', []);
+// underscore.factory('_', function() {
+//   return window._;
+// });
+//
+// var ploneVariables = angular.module('ploneVariables', []);
+// ploneVariables.factory('plonePortalURL', function() {
+//   return window.portal_url;
+// });
 
 // The main GenwebApp definition
 var GenwebApp = angular.module('GenwebApp', [
@@ -29,6 +29,7 @@ var GenwebApp = angular.module('GenwebApp', [
     'MAXClient',
     'underscore',
     'ploneVariables',
+    'momentjs',
     'ui.select',
     'ui.jq',
     'datatables',
@@ -40,5 +41,6 @@ var GenwebApp = angular.module('GenwebApp', [
     'custom.ui.bootstrap',
     'pascalprecht.translate',
     'angularUtils.directives.dirPagination',
-    'ui.router'
+    'ui.router',
+    'ulearn.stats'
   ]);

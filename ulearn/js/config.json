@@ -34,7 +34,9 @@
           "../ulearn.js/ulearn/js/components/angular-sweetalert/SweetAlert.js",
           "../ulearn.js/ulearn/js/components/sweetalert/lib/sweet-alert.js",
           "../ulearn.js/ulearn/js/components/angular-translate/angular-translate.js",
-          "../ulearn.js/ulearn/js/components/angular-utils-pagination/dirPagination.js"
+          "../ulearn.js/ulearn/js/components/angular-utils-pagination/dirPagination.js",
+          "../ulearn.js/ulearn/js/components/moment/moment.js",
+          "../ulearn.js/ulearn/js/components/v-modal/dist/v-modal.js"
         ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.common.js"
@@ -44,6 +46,18 @@
     "app": {
       "js": {
         "development": [
+          "../ulearn.js/ulearn/js/app/modularization.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/ulearn.stats.module.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/ulearn.stats.config.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/stats.controller.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/ulearn.stats.values.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/ulearn.stats.directives.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/results.controller.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/results.service.js",
+          "../ulearn.js/ulearn/js/app/ulearn.common/user.service.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/stats.modal.factory.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/stats.modal.controller.js",
+          "../ulearn.js/ulearn/js/app/ulearn.stats/translations.js",
           "../ulearn.js/ulearn/js/app/app.js",
           "../ulearn.js/ulearn/js/app/translations.js",
           "../ulearn.js/ulearn/js/app/controllers/editacl.js",

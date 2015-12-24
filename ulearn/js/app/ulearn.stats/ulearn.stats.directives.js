@@ -19,6 +19,7 @@
             restrict: 'E',
             controller: ['$scope', '$element', '$attrs', 'StatsInfo', function($scope, $element, $attrs, StatsInfo) {
                 StatsInfo.communities = angular.fromJson($attrs.communities);
+                StatsInfo.extended_report = JSON.parse($attrs.extendedReport.toLowerCase());
             }]
         };
     }

@@ -23,6 +23,13 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
                       angular.element('#angular-route-view').siblings().hide()
                       angular.element('#home-angular-route-view').parent().parent().find('> * > *').hide()
                       return;
+                  },
+                // When coming from stats route, shows again the right portlets
+                showrightportlets: function(){
+                      angular.element('.homepage-hpm4').show()
+                      angular.element('.homepage-hpm3').addClass('span8')
+                      angular.element('.homepage-hpm3').removeClass('span12')
+                      return;
                   }
               },
               templateUrl: '++ulearn++app/templates/searchusers.html'

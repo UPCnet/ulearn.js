@@ -16,7 +16,7 @@
               templateUrl: '++ulearn++app/ulearn.stats/templates/stats.html',
               controller: 'StatsController as statsctrl',
               resolve: {
-                hideportlets: function(){
+                hiderightportlets: function(){
                       angular.element('#angular-route-view').siblings().hide()
                       angular.element('#home-angular-route-view').parent().parent().find('> * > *').hide()
                       angular.element('.homepage-hpm4').hide()

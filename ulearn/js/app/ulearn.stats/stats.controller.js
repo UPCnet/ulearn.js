@@ -68,7 +68,7 @@
         self.principals = [];
         self.availableTags = [];
         self.communities = StatsInfo.communities;
-
+        self.extended_report = StatsInfo.extended_report;
         self.selected_user = '';
         self.selected_tags = [];
         self.startMonth = moment.months(GetInitialMonth(moment().month()));

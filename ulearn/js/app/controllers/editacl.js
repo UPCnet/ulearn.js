@@ -20,6 +20,7 @@
     self.principals = [{id:'No results found'}];
     self.group_results = [];
     self.users = [];
+    self.roles = [];
     self.groups = [];
     self.active_tab = 'users';
 
@@ -34,12 +35,12 @@
 
     self.dtColumnDefs = [
         DTColumnDefBuilder.newColumnDef(0),
-        DTColumnDefBuilder.newColumnDef(1),
-        DTColumnDefBuilder.newColumnDef(2).withOption('sSortDataType', 'dom-checkbox'),
-        DTColumnDefBuilder.newColumnDef(3).withOption('sSortDataType', 'dom-checkbox'),
-        DTColumnDefBuilder.newColumnDef(4).withOption('sSortDataType', 'dom-checkbox'),
-        DTColumnDefBuilder.newColumnDef(5).notSortable()
-    ];
+        DTColumnDefBuilder.newColumnDef(1)];
+    for (var i = 0; i < self.roles.length;i++) {
+        self.dtColumnDefs.push(DTColumnDefBuilder.newColumnDef(2+i).withOption('sSortDataType', 'dom-checkbox'));
+    }
+
+    self.dtColumnDefs.push(DTColumnDefBuilder.newColumnDef(self.roles.length + 2).notSortable());
 
     var last_query = '';
     var last_query_count = 0;
@@ -109,6 +110,15 @@ GenwebApp.directive('acl', [function() {
         } else {
             $scope.ctrl.groups = [];
         }
+      }
+    };
+}]);
+
+GenwebApp.directive('roles', [function() {
+    return {
+      link: function($scope, $element, $attrs) {
+        var roles = angular.fromJson($attrs.roles);
+        $scope.ctrl.roles = roles;
       }
     };
 }]);

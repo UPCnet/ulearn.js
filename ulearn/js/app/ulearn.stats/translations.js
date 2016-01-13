@@ -158,6 +158,7 @@
                 'TITLE': 'Estadístiques',
                 'RESULTSTITLE': 'Resultats',
                 'SAVE': 'Desa',
+                'FIND': 'Busca',
                 'ACTIVITY': 'Activitat',
                 'CHATS': 'Xats',
                 'ACCESSES': 'Accessos',

@@ -91,7 +91,7 @@
     "../genweb.cdn/genweb/cdn/dist": "++genweb++dist"
   },
   "revision_info": {
-    "../genweb.cdn/genweb/cdn/dist/ulearn.common.js": "../genweb.cdn/genweb/cdn/dist/ulearn.common.5b1433d4.js",
-    "../genweb.cdn/genweb/cdn/dist/ulearn.app.js": "../genweb.cdn/genweb/cdn/dist/ulearn.app.77b9fa09.js"
+    "../genweb.cdn/genweb/cdn/dist/ulearn.common.js": "../genweb.cdn/genweb/cdn/dist/ulearn.common.45d999b9.js",
+    "../genweb.cdn/genweb/cdn/dist/ulearn.app.js": "../genweb.cdn/genweb/cdn/dist/ulearn.app.59e8d2b7.js"
   }
 }

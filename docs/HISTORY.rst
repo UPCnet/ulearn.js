@@ -1,11 +1,16 @@
 Changelog
 =========
 
-2.16 (unreleased)
+2.16 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Fix path of template [Victor Fernandez de Alba]
+* Add missing translation STATS.FIND [Victor Fernandez de Alba]
+* Read defined community roles [Carles Bruguera]
+* Integrate fully with core angular code [Victor Fernandez de Alba]
+* Update to angular 1.4.8 and add some required modules for stats [Victor Fernandez de Alba]
+* Migrate search view to angular [Pilar Marinas]
 
 2.15 (2015-12-01)
 -----------------

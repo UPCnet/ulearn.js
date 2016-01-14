@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.18 (unreleased)
+2.18 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Fix build [Pilar Marinas]
+* Fix regex to meet route routes [Victor Fernandez de Alba]
 
 2.17 (2016-01-14)
 -----------------

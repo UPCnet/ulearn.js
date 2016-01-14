@@ -75,7 +75,8 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true" i18n:translate="btnCancel">
         {{ 'STATS.CANCELA' | translate }}</button>
     </div>
-    <div class="span4 formControls">
+    <div class="span4 formControls"
+         ng-if="statsctrl.extended_report">
         <button id="form-buttons-activity-chats"
                 class="button-field context"
                 i18n:domain="ulearn"

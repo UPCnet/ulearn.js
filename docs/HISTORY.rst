@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.17 (unreleased)
+2.17 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Ocultar boton activity chats [Pilar Marinas]
 
 2.16 (2016-01-14)
 -----------------

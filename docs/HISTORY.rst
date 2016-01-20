@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.19 (unreleased)
+2.19 (2016-01-20)
 -----------------
 
-- Nothing changed yet.
-
+* Fix build [Pilar Marinas]
+* Search by enter in thinnkers [Pilar Marinas]
+* Afegir paginacio directori usuari foto [Pilar Marinas]
 
 2.18 (2016-01-14)
 -----------------

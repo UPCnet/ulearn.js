@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.20 (unreleased)
+2.20 (2016-01-20)
 -----------------
 
-- Nothing changed yet.
-
+* Fix build [Pilar Marinas]
+* Modificar num usuaris a mostrar [Pilar Marinas]
 
 2.19 (2016-01-20)
 -----------------

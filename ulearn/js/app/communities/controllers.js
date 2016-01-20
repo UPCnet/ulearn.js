@@ -178,7 +178,7 @@ GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'Community
           if (self.big == false){
             self.pageSize = 10;
           } else {
-            self.pageSize = 25;
+            self.pageSize = 100;
           }
         }
       );

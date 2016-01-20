@@ -201,5 +201,14 @@ GenwebApp.controller('Thinnkers', ['_', 'plonePortalURL', 'CommunityInfo', 'User
 
   }
 
+  self.searchbyenter = function (keyEvent) {
+
+    if (keyEvent.which === 13){
+        $state.go('search', {search: self.query })
+      }
+
+  }
+
+
 
 }]);

@@ -32,7 +32,7 @@
     <section id="userlist">
 
       <div ng-if="ctrl.users.big === true">
-        <div ng-repeat="user in ctrl.users.content">
+        <div dir-paginate="user in ctrl.users.content | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
           <div class="directori_usuari_foto">
             <a ng-href="{{user.url}}" ng-bind-html="user.foto">
             </a>

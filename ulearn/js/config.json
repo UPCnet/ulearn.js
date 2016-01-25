@@ -15,6 +15,7 @@
           "../genweb.js/genweb/js/components/datatables/media/js/jquery.dataTables.js",
           "../genweb.core/genweb/core/static/js/ios-orientationchange-fix.js",
           "../genweb.js/genweb/js/legacy/main.js",
+          "../genweb.js/genweb/js/legacy/links_icon_blank.js",
           "../ulearn.js/ulearn/js/legacy/ulearn.js",
           "../ulearn.js/ulearn/js/components/angular/angular.js",
           "../ulearn.js/ulearn/js/components/angular-animate/angular-animate.js",

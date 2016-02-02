@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.21 (unreleased)
+2.21 (2016-02-02)
 -----------------
 
-- Nothing changed yet.
-
+* Fix build [Pilar Marinas]
+* add new js into config.json [Alberto Duran]
 
 2.20 (2016-01-20)
 -----------------

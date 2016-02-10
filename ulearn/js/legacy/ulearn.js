@@ -254,7 +254,7 @@ $(document).ready(function (event) {
                 // debugger;
                 if ($('i', $anchor).hasClass('fa-heart-o')) {
                     $('i', $anchor).addClass('fa-heart').removeClass('fa-heart-o');
-                    alertify.success(_ulearn_i18n("Gràcies per donar suport en aquesta idea."));
+                    alertify.success(_ulearn_i18n("Gràcies per donar suport a aquesta idea."));
                 } else {
                     $('i', $anchor).addClass('fa-heart-o').removeClass('fa-heart');
                     alertify.set({ delay: 10000 });
@@ -284,7 +284,7 @@ $(document).ready(function (event) {
                 } else {
                     $('i', $anchor).addClass('fa-sign-out').removeClass('fa-sign-in');
                     alertify.set({ delay: 10000 });
-                    alertify.success(_ulearn_i18n("Gràcies per implicar-te en aquesta proposta. La persona que la promou es posarà en contacte amb tu per mirar de tirar-la endavant."));
+                    alertify.success(_ulearn_i18n("Gràcies per implicar-te en aquesta proposta. les persones que la promouen es posaran en contacte amb tu per mirar de tirar-la endavant."));
                     alertify.set({ delay: 5000 });
                 }
             }

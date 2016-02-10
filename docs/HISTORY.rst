@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.22 (unreleased)
+2.22 (2016-02-10)
 -----------------
 
-- Nothing changed yet.
-
+* cdn nexus24 [Paco Gregori]
+* change literal to nexus24 [Paco Gregori]
 
 2.21 (2016-02-02)
 -----------------

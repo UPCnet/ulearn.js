@@ -34,6 +34,46 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
               },
               templateUrl: '++ulearn++app/templates/searchusers.html'
             })
+            .state('allcommunities', {
+              url: '/allcommunities',
+              controller: 'AllCommunities as ctrl',
+              resolve: {
+                hideportlets: function(){
+                      angular.element('#angular-route-view').siblings().hide()
+                      angular.element('#home-angular-route-view').parent().parent().find('> * > *').hide()
+                      return;
+                  },
+                // When coming from stats route, shows again the right portlets
+                showrightportlets: function(){
+                      angular.element('.homepage-hpm4').show()
+                      angular.element('.homepage-hpm3').addClass('span8')
+                      angular.element('.homepage-hpm3').removeClass('span12')
+                      return;
+                  }
+              },
+              templateUrl: '++ulearn++app/templates/allcommunities.html'
+            })
+            .state('usercommunities', {
+              url: '/usercommunities',
+              controller: 'AllCommunities as ctrl',
+              resolve: {
+                hideportlets: function(){
+                      angular.element('#angular-route-view').siblings().hide()
+                      angular.element('#home-angular-route-view').parent().parent().find('> * > *').hide()
+                      return;
+                  },
+                // When coming from stats route, shows again the right portlets
+                showrightportlets: function(){
+                      angular.element('.homepage-hpm4').show()
+                      angular.element('.homepage-hpm3').addClass('span8')
+                      angular.element('.homepage-hpm3').removeClass('span12')
+                      return;
+                  }
+              },
+              templateUrl: '++ulearn++app/templates/usercommunities.html'
+            })
+
+
 
   $translateProvider.translations('en', {
     'COMMON': {

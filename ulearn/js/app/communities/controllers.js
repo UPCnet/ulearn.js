@@ -152,7 +152,6 @@ GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'Community
   var self = this;
   self.currentPage = 1;
   self.query = $stateParams.search || '';
-
   if (CommunityInfo.community_url == '') {
     self.portalURL = plonePortalURL;
   } else {

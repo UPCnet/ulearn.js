@@ -10,13 +10,17 @@
 
 GenwebApp.directive('maxActivitiesCount', [function() {
     return {
-      controller: ['$scope', '$element', '$attrs', 'UserActivities', 'ContextActivities', function($scope, $element, $attrs, UserActivities, ContextActivities) {
+      controller: ['$scope', '$element', '$attrs', 'UserActivities', 'ContextActivities', 'UsersComments', function($scope, $element, $attrs, UserActivities, ContextActivities, UsersComments) {
         if ($attrs.object === 'context') {
             ContextActivities.get_count($attrs.communityHash).then(
                 function (response) {
                     $element.text(response.headers('X-totalItems'));
                     $scope.context_activities = response.headers('X-totalItems');
             });
+            UsersComments.get_count($attrs.communityHash).then(
+                  function (response) {
+                      $scope.users_comments = response.headers('X-totalItems');
+                  });
         }
         if ($attrs.object === 'user') {
             $scope.user_act_promise = UserActivities.get_count($attrs.username).then(
@@ -64,17 +68,6 @@ GenwebApp.directive('lastauthors', [function() {
         } else {
           $scope.last_authors = ContextLastAuthors.query({hash: $attrs.communityHash, limit: 8});
         }
-      }]
-    };
-}]);
-
-GenwebApp.directive('communitiesstats', [function() {
-    return {
-      controller: ['$scope', '$element', '$attrs', 'UsersComments', function($scope, $element, $attrs, UsersComments) {
-        UsersComments.get_count($attrs.communityHash).then(
-              function (response) {
-                  $scope.users_comments = response.headers('X-totalItems');
-              });
       }]
     };
 }]);

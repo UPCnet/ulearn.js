@@ -1,10 +1,9 @@
 Changelog
 =========
 
-2.24 (unreleased)
+2.24 (2016-03-17)
 -----------------
 
-- Nothing changed yet.
 
 
 2.23 (2016-03-17)

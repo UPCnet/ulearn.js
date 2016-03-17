@@ -1,11 +1,15 @@
 Changelog
 =========
 
-2.23 (unreleased)
+2.23 (2016-03-17)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* portlet stats count comentaris [Paco Gregori]
+* translate usercommunities view buttons [Paco Gregori]
+* resolve pagination allcomunities.html [Paco Gregori]
+* stats css [Paco Gregori]
+* add allcommunities and usercommunities views [Paco Gregori]
 
 2.22 (2016-02-10)
 -----------------

@@ -53,39 +53,88 @@ GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 
   };
 
   self.subscribe = function (community) {
-    $http.post(community.url+'/subscribe')
-      .success(function (response) {
-        self.user_subscriptions.push(community.url);
-      })
-      .error(function (response) {
-        $translate(['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'])
-         .then(function (translations) {
-          SweetAlert.swal({
-            title:'Error',
-            description: translations['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'],
-            type:'error',
-            timer: 2000});
+    $translate(['COMMUNITY_SUBSCRIBE.TITLE',
+                'COMMUNITY_SUBSCRIBE.SUCCESSBTN',
+                'COMMUNITY_SUBSCRIBE.CANCELBTN',
+                'COMMUNITY_SUBSCRIBE.DONE',
+                'COMMUNITY_SUBSCRIBE.ERROR'])
+     .then(function (translations) {
+        SweetAlert.swal({
+          title: translations['COMMUNITY_SUBSCRIBE.TITLE'],
+          type: 'warning',
+          showCancelButton: true,
+          cancelButtonText: translations['COMMUNITY_SUBSCRIBE.CANCELBTN'],
+          confirmButtonColor: '#60b044',
+          confirmButtonText: translations['COMMUNITY_SUBSCRIBE.SUCCESSBTN']
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+
+            $http.post(community.url+'/subscribe')
+              .success(function (response) {
+                self.user_subscriptions.push(community.url);
+                SweetAlert.swal({
+                    title: translations['COMMUNITY_SUBSCRIBE.DONE'],
+                    type: 'success',
+                    timer: 2000});
+              })
+              .error(function (response) {
+                $translate(['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'])
+                 .then(function (translations) {
+                  SweetAlert.swal({
+                    title:'Error',
+                    description: translations['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'],
+                    type:'error',
+                    timer: 2000});
+                });
+              });
+          };
         });
-      });
+    });
   };
 
   self.unSubscribe = function (community) {
-    $http.post(community.url+'/unsubscribe')
-      .success(function (response) {
-        self.user_subscriptions.pop(community.url);
-        community.favorited = false;
-      })
-      .error(function (response) {
-        $translate(['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'])
-         .then(function (translations) {
-          SweetAlert.swal({
-            title:'Error',
-            description: translations['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'],
-            type:'error',
-            timer: 2000});
+    $translate(['COMMUNITY_UNSUBSCRIBE.TITLE',
+                'COMMUNITY_UNSUBSCRIBE.SUCCESSBTN',
+                'COMMUNITY_UNSUBSCRIBE.CANCELBTN',
+                'COMMUNITY_UNSUBSCRIBE.DONE',
+                'COMMUNITY_UNSUBSCRIBE.ERROR'])
+     .then(function (translations) {
+        SweetAlert.swal({
+          title: translations['COMMUNITY_UNSUBSCRIBE.TITLE'],
+          type: 'warning',
+          showCancelButton: true,
+          cancelButtonText: translations['COMMUNITY_UNSUBSCRIBE.CANCELBTN'],
+          confirmButtonColor: '#60b044',
+          confirmButtonText: translations['COMMUNITY_UNSUBSCRIBE.SUCCESSBTN']
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+
+
+            $http.post(community.url+'/unsubscribe')
+              .success(function (response) {
+                self.user_subscriptions.pop(community.url);
+                community.favorited = false;
+                SweetAlert.swal({
+                    title: translations['COMMUNITY_UNSUBSCRIBE.DONE'],
+                    type: 'success',
+                    timer: 2000});
+              })
+              .error(function (response) {
+                $translate(['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'])
+                 .then(function (translations) {
+                  SweetAlert.swal({
+                    title:'Error',
+                    description: translations['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'],
+                    type:'error',
+                    timer: 2000});
+                });
+              });
+          }
         });
-      });
-  };
+  });
+};
 
   self.delete = function (community) {
     $translate(['ALLCOMMUNITIES_VIEW.CONFIRMDELETE',

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.25 (unreleased)
+2.25 (2016-04-18)
 -----------------
 
-- Nothing changed yet.
-
+* add subscribe, unsubscribe popup confirmation on allcommunities view [Paco Gregori]
 
 2.24 (2016-03-17)
 -----------------

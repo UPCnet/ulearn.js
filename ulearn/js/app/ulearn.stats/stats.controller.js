@@ -40,10 +40,11 @@
                 daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
                 monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 firstDay: 1
-            }
+            },
+            activity: 'activity'
         };
 
-        $translate(['STATS.TODAY', 'STATS.YESTERDAY', 'STATS.LAST7DAYS', 'STATS.LAST30DAYS', 'STATS.THISMONTH', 'STATS.LASTMONTH',
+        $translate(['STATS.ACTIVITY','STATS.TODAY', 'STATS.YESTERDAY', 'STATS.LAST7DAYS', 'STATS.LAST30DAYS', 'STATS.THISMONTH', 'STATS.LASTMONTH',
                     'COMMON.JANUARY', 'COMMON.FEBRUARY', 'COMMON.MARCH', 'COMMON.APRIL', 'COMMON.MAY', 'COMMON.JUNE', 'COMMON.JULY', 'COMMON.AUGUST', 'COMMON.SEPTEMBER', 'COMMON.OCTOBER', 'COMMON.NOVEMBER', 'COMMON.DECEMBER',
                     'STATS.APPLY', 'STATS.CANCEL', 'STATS.FROM', 'STATS.TO', 'STATS.CUSTOM',
                     'COMMON.SU', 'COMMON.MO', 'COMMON.TU', 'COMMON.WE', 'COMMON.TH', 'COMMON.FR', 'COMMON.SA'])
@@ -63,6 +64,8 @@
                 self.options.locale.customRangeLabel = translations['STATS.CUSTOM'];
 
                 self.options.locale.daysOfWeek = [translations['COMMON.SU'], translations['COMMON.MO'], translations['COMMON.TU'], translations['COMMON.WE'], translations['COMMON.TH'], translations['COMMON.FR'], translations['COMMON.SA']];
+
+                self.options.activity = translations['STATS.ACTIVITY'].toLowerCase();
             });
 
         self.principals = [];
@@ -86,7 +89,7 @@
         self.refreshUsers = RefreshUsers;
         self.search = Search;
         self.export = Export;
-        self.stats = Stats;
+        self.stats = Activities;
         self.chats = Chats;
 
         /////////////////////////////////////
@@ -124,8 +127,8 @@
             $window.location = plonePortalURL + '/ulearn-stats-query?' + query;
         }
 
-        function Stats () {
-            $window.location = plonePortalURL + '/actividad';
+        function Activities () {
+            $window.location = plonePortalURL + '/' + self.options.activity;
         }
 
         function Chats () {

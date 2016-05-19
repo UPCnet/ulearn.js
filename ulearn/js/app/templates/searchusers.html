@@ -14,13 +14,12 @@
     <div id="subscribealert" class="alert alert-info" role="alert">
         <button data-dismiss="alert" class="close" type="button">×</button>
         <p>
-        <strong>Info</strong><br/>
         <tal:msg>{{'SEARCHUSERS.USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1' | translate}}
         </tal:msg>
         <span ng-if="ctrl.users.big === true">
-            <tal:msg>{{'SEARCHUSERS.USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2' | translate}}
-            </tal:msg>
-            <span>{{ctrl.users.length}}</span>.
+            <tal:msg>{{'SEARCHUSERS.USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2' | translate}} </tal:msg>
+            <span>{{ctrl.users.length}}</span>
+            <tal:msg>{{'SEARCHUSERS.PEOPLE' | translate}} </tal:msg>
         </span>
         </p>
       </div>

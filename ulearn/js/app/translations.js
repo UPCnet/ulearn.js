@@ -74,7 +74,6 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
             })
 
 
-
   $translateProvider.translations('en', {
     'COMMON': {
       'SAVE': 'Save'
@@ -108,6 +107,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'ACTIONS': 'Actions'
     },
     'ALLCOMMUNITIES_VIEW': {
+      'TITLE': 'Communities',
       'FAVORITEDERROR': 'There was an error while favoriting/unfavoriting the community.',
       'SUBSCRIBEERROR': 'There was an error while subscribing the community.',
       'UNSUBSCRIBEERROR': 'There was an error while unsubscribing the community.',
@@ -176,6 +176,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'ACTIONS': 'Acciones'
     },
     'ALLCOMMUNITIES_VIEW': {
+      'TITLE': 'Comunidades',
       'FAVORITEDERROR': 'Se ha producido un error al intentar hacer favorita a la comunidad.',
       'SUBSCRIBEERROR': 'Se ha producido un error al intentar suscribirle a la comunidad.',
       'UNSUBSCRIBEERROR': 'Se ha producido un error al intentar desuscribirle a la comunidad.',
@@ -244,6 +245,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'ACTIONS': 'Acciones'
     },
     'ALLCOMMUNITIES_VIEW': {
+      'TITLE': 'Comunitats',
       'FAVORITEDERROR': 'S\'ha produit un error al intentar fer favorita a la comunitat.',
       'SUBSCRIBEERROR': 'S\'ha produit un error al intentar suscriure\'l a la comunitat.',
       'UNSUBSCRIBEERROR': 'S\'ha produit un error al intentar desuscriure\'l a la comunitat.',

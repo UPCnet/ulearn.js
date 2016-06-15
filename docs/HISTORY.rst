@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.28 (unreleased)
+2.28 (2016-06-15)
 -----------------
 
-- Nothing changed yet.
-
+* mispelled comma in json [roberto.diaz]
 
 2.27 (2016-06-15)
 -----------------

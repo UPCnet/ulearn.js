@@ -82,7 +82,7 @@
     <label for="form-widgets-IDublinCore-effective" class="horizontal" i18n:translate="Filtro por palabra clave">
       {{ 'STATS.TAGS' | translate }}
     </label>
-
+    <br/>
     <ui-select multiple tagging tagging-label=false ng-model="statsctrl.selected_tags" theme="select2" style="width: 250px;">
       <ui-select-match>{{$item}}</ui-select-match>
       <ui-select-choices repeat="tag in statsctrl.availableTags | filter:$select.search">

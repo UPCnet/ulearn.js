@@ -135,7 +135,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'ERROR': 'There was an error while changing the community type, please try again later.'
     },
     'SEARCHUSERS':{
-      'THINNKERS': 'Thinnkers',
+      'THINNKERS': 'People',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Use the search input to find people. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Showing 100 out of ',
       'SEARCH': 'Search',

@@ -70,10 +70,10 @@
           "../ulearn.js/ulearn/js/app/communities/controllers.js",
           "../ulearn.js/ulearn/js/components/angular-maxclient/MAXClient.js",
           "../ulearn.js/ulearn/js/components/angular-maxclient/MAXUtils.js",
-          "../ulearn.theme/ulearn/theme/portlets/flashesinformativos/flashesinformativos.js",
+/*          "../ulearn.theme/ulearn/theme/portlets/flashesinformativos/flashesinformativos.js",
           "../ulearn.theme/ulearn/theme/portlets/mysubjects/mysubjects.js",
           "../ulearn.theme/ulearn/theme/portlets/custombuttonbar/custombuttonbar.js"
-        ],
+*/        ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.app.js"
         ]

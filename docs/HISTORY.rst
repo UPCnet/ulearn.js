@@ -1,11 +1,14 @@
 Changelog
 =========
 
-2.26 (unreleased)
+2.26 (2016-06-15)
 -----------------
 
-- Nothing changed yet.
-
+* updated translations [roberto.diaz]
+* translate allcomunnities view [Paco Gregori]
+* added , to end [roberto.diaz]
+* changed persons count message [roberto.diaz]
+* add translations for stasts in base [Alberto Duran]
 
 2.25 (2016-04-18)
 -----------------

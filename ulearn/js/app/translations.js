@@ -113,7 +113,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'UNSUBSCRIBEERROR': 'There was an error while unsubscribing the community.',
       'CONFIRMDELETE': 'Are you sure that you want to delete this community?',
       'CONFIRMDELETEBTN': 'Delete',
-      'DELETEDONE': 'Successfully deleted the community.',
+      'DELETEDONE': 'The community has been successfully deleted.',
       'DELETEERROR': 'There was an error while deleting the community.',
       'FAVORITE': 'Favorite',
       'SUBSCRIBE': 'Subscribe',
@@ -129,9 +129,9 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'CLOSED': 'Closed',
       'OPEN': 'Open',
       'ORGANIZATIVE': 'Organizative',
-      'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
-      'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
-      'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
+      'CLOSEDDESC': 'Only the Community Owner can subscribe you to the community, but you can unsubscribe.',
+      'OPENDESC': 'Public Community (everyone can see it) and you can subscribe and unsubscribe.',
+      'ORGANIZATIVEDESC': 'Only an administrator can subscribe to the Community and you cant not unsubscribe.',
       'ERROR': 'There was an error while changing the community type, please try again later.'
     },
     'SEARCHUSERS':{
@@ -149,17 +149,17 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'COMMUNITY_SUBSCRIBE': {
         'TITLE': '¿Quieres suscribirte a esta comunidad?',
-        'CANCELBTN': 'Cancel',
+        'CANCELBTN': 'Cancelar',
         'SUCCESSBTN': 'Suscribirme',
         'DONE': 'La suscripción se ha realizado con éxito.',
         'ERROR': 'Se ha producido un error al intentar suscribirle a la comunidad.',
     },
     'COMMUNITY_UNSUBSCRIBE': {
         'TITLE': '¿Quieres desuscribirte de esta comunidad?',
-        'CANCELBTN': 'Cancel',
+        'CANCELBTN': 'Cancelar',
         'SUCCESSBTN': 'Desuscribirme',
         'DONE': 'La suscripción se ha eliminado con éxito.',
-        'ERROR': 'Se ha producido un error al intentar dessuscribirle de la comunidad.',
+        'ERROR': 'Se ha producido un error al intentar desuscribirle de la comunidad.',
     },
     'COMMUNITY_ACL': {
       'USERS': 'Usuarios',
@@ -177,7 +177,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'ALLCOMMUNITIES_VIEW': {
       'TITLE': 'Comunidades',
-      'FAVORITEDERROR': 'Se ha producido un error al intentar hacer favorita a la comunidad.',
+      'FAVORITEDERROR': 'Se ha producido un error al intentar hacer favorita la comunidad.',
       'SUBSCRIBEERROR': 'Se ha producido un error al intentar suscribirle a la comunidad.',
       'UNSUBSCRIBEERROR': 'Se ha producido un error al intentar desuscribirle a la comunidad.',
       'CONFIRMDELETE': '¿Está seguro que quiere eliminar esta comunidad?',
@@ -201,7 +201,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
       'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
       'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
-      'ERROR': 'Se ha producido un error al intentar cambiar el tipo de la comunidad. Por favor, inténtelo de nuevo más tarde.'
+      'ERROR': 'Se ha producido un error al intentar cambiar el tipo de comunidad. Por favor, inténtelo de nuevo más tarde.'
     },
     'SEARCHUSERS':{
       'THINNKERS': 'Personas',
@@ -218,7 +218,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'COMMUNITY_SUBSCRIBE': {
         'TITLE': 'Voleu subscrivir-vos a aquesta comunitat?',
-        'CANCELBTN': 'Cancel',
+        'CANCELBTN': 'Cancel·lar',
         'SUCCESSBTN': 'Subscriu-me',
         'DONE': 'La subscripció s\'ha realitzat amb èxit.',
         'ERROR': 'S\'ha produit un error al intentar subscriure\'l a la comunitat.',
@@ -227,8 +227,8 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
         'TITLE': 'Voleu desubscrivir-vos d\'aquesta comunitat?',
         'CANCELBTN': 'Cancel',
         'SUCCESSBTN': 'Desubscriu-me',
-        'DONE': 'La subscripció s\'ha eliminat amb èxit.',
-        'ERROR': 'S\'ha produit un error al intentar desubscriure\'l a la comunitat.',
+        'DONE': 'La subscripció s\'ha realitzat amb èxit.',
+        'ERROR': 'S\'ha produït un error en intentar desubscriure\'l a la comunitat.',
     },
     'COMMUNITY_ACL': {
       'USERS': 'Usuaris',
@@ -242,17 +242,17 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'READER': 'Lector',
       'WRITER': 'Editor',
       'OWNER': 'Propietari',
-      'ACTIONS': 'Acciones'
+      'ACTIONS': 'Accions'
     },
     'ALLCOMMUNITIES_VIEW': {
       'TITLE': 'Comunitats',
-      'FAVORITEDERROR': 'S\'ha produit un error al intentar fer favorita a la comunitat.',
-      'SUBSCRIBEERROR': 'S\'ha produit un error al intentar suscriure\'l a la comunitat.',
-      'UNSUBSCRIBEERROR': 'S\'ha produit un error al intentar desuscriure\'l a la comunitat.',
+      'FAVORITEDERROR': 'S\'ha produït un error al intentar fer favorita la comunitat.',
+      'SUBSCRIBEERROR': 'S\'ha produït un error al intentar suscriure\'l aa la comunitat.',
+      'UNSUBSCRIBEERROR': 'S\'ha produït un error al intentar desuscriure\'l de la comunitat.',
       'CONFIRMDELETE': 'Esteu segurs que voleu esborrar aquesta comunitat?',
       'CONFIRMDELETEBTN': 'Esborra',
       'DELETEDONE': 'S\'ha esborrat la comunitat.',
-      'DELETEERROR': 'S\'ha produit un error al intentar esborrar la comunitat.',
+      'DELETEERROR': 'S\'ha produït un error al intentar esborrar la comunitat.',
       'FAVORITE': 'Favorit',
       'SUBSCRIBE': 'Subscriu',
       'UNSUBSCRIBE': 'Desubscriu',
@@ -260,17 +260,17 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'DELETE': 'Esborra'
     },
     'EDITACL_VIEW': {
-      'DESCRIPTION': 'S\'ha produit un error al intentar canviar els permisos de la comunitat. Si us plau, torneu a intentar-ho més tard.'
+      'DESCRIPTION': 'S\'ha produït un error al intentar canviar els permisos de la comunitat. Si us plau, torneu a intentar-ho més tard.'
     },
     'CHANGECOMMUNITYTYPE_VIEW': {
       'TITLE': 'Canvia el tipus de comunitat',
       'CLOSED': 'Tancada',
       'OPEN': 'Oberta',
       'ORGANIZATIVE': 'Organitzativa',
-      'CLOSEDDESC': 'Sólo puede suscribirte el propietario de la comunidad, pero puedes desuscribirte.',
-      'OPENDESC': 'Pública (la ve todo el mundo) y te puedes suscribir y desuscribirte.',
-      'ORGANIZATIVEDESC': 'Sólo puede suscribirte un administrador y no puedes desuscribirte.',
-      'ERROR': 'S\'ha produit un error al intentar canviar el tipus de la comunitat. Si us plau, torneu a intentar-ho més tard.'
+      'CLOSEDDESC': 'Només pot subscriure\'t el propietari de la comunitat, però pots desubscriuret.',
+      'OPENDESC': 'Pública (la veu tothom) i et pots subscriure i desubscriure.',
+      'ORGANIZATIVEDESC': 'Només pot subscriure\'t un administrador i no pots desubscriuret',
+      'ERROR': 'S\'ha produït un error al intentar canviar el tipus de la comunitat. Si us plau, torneu a intentar-ho més tard.'
     },
     'SEARCHUSERS':{
       'THINNKERS': 'Persones',
@@ -333,8 +333,8 @@ GenwebApp.value('DTTranslations', {
         'sLast':     'Últim'
       },
       'oAria': {
-        'sSortAscending':  ': Activa per ordenar la columna de manera ascendente',
-        'sSortDescending': ': Activa per ordenar la columna de manera descendente'
+        'sSortAscending':  ': Activa per ordenar la columna de manera ascendent',
+        'sSortDescending': ': Activa per ordenar la columna de manera descendent'
       }
     },
     en: {
@@ -356,8 +356,8 @@ GenwebApp.value('DTTranslations', {
         'sPrevious': 'Previous'
       },
       'oAria': {
-        'sSortAscending':  ': activate to sort column ascending',
-        'sSortDescending': ': activate to sort column descending'
+        'sSortAscending':  ': Activate to sort column ascending',
+        'sSortDescending': ': Activate to sort column descending'
       }
     }
 });

@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.27 (unreleased)
+2.27 (2016-06-15)
 -----------------
 
-- Nothing changed yet.
-
+* commented new portlets js [roberto.diaz]
+* added br after tags line [roberto.diaz]
+* Merge branch 'master' of github.com:UPCnet/ulearn.js [roberto.diaz]
+* added br after tags line [roberto.diaz]
 
 2.26 (2016-06-15)
 -----------------

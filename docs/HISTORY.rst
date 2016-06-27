@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.30 (unreleased)
+2.30 (2016-06-27)
 -----------------
 
-- Nothing changed yet.
-
+* Merge branch 'master' of github.com:UPCnet/ulearn.js [roberto.diaz]
+* changes cdn [roberto.diaz]
 
 2.29 (2016-06-27)
 -----------------

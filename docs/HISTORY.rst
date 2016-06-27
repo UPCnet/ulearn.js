@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.29 (unreleased)
+2.29 (2016-06-27)
 -----------------
 
-- Nothing changed yet.
-
+* removed / from url [roberto.diaz]
 
 2.28 (2016-06-15)
 -----------------

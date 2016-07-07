@@ -69,7 +69,8 @@
           "../ulearn.js/ulearn/js/app/community/directives.js",
           "../ulearn.js/ulearn/js/app/communities/controllers.js",
           "../ulearn.js/ulearn/js/components/angular-maxclient/MAXClient.js",
-          "../ulearn.js/ulearn/js/components/angular-maxclient/MAXUtils.js"
+          "../ulearn.js/ulearn/js/components/angular-maxclient/MAXUtils.js",
+          "../ulearn.theme/ulearn/theme/portlets/custombuttonbar/custombuttonbar.js"
         ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.app.js"

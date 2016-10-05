@@ -3,7 +3,6 @@
     "common": {
       "js": {
         "development": [
-          "../genweb.cdn/genweb/cdn/mixin/jquery-1.8.js",
           "../genweb.cdn/genweb/cdn/mixin/register_function.js",
           "../genweb.cdn/genweb/cdn/mixin/jquery.tools.min.js",
           "../genweb.cdn/genweb/cdn/mixin/jquery.form.js",

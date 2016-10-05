@@ -63,6 +63,7 @@ GenwebApp.directive('lastauthors', [function() {
     return {
       controller: ['$scope', '$element', '$attrs', 'plonePortalURL', 'MAXInfo', 'TimelineLastAuthors', 'ContextLastAuthors', function($scope, $element, $attrs, plonePortalURL, MAXInfo, TimelineLastAuthors, ContextLastAuthors) {
         $scope.portal_url = plonePortalURL;
+        $scope.url_max_server = MAXInfo.max_server;
         if ($attrs.type === 'timeline') {
           $scope.last_authors = TimelineLastAuthors.query({username: MAXInfo.username, limit: 8});
         } else {

@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.32 (unreleased)
+2.32 (2016-10-05)
 -----------------
 
-- Nothing changed yet.
-
+* create cdn ulearn.js [Paco Gregori]
+* remove jquery from config.json [Paco Gregori]
 
 2.31 (2016-10-05)
 -----------------

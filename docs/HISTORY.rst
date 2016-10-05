@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.31 (unreleased)
+2.31 (2016-10-05)
 -----------------
 
-- Nothing changed yet.
-
+* plone js integrate cdn [Paco Gregori]
+* View avatar MAX [Pilar Marinas]
+* add custombuttonbar js to json [Paco Gregori]
 
 2.30 (2016-06-27)
 -----------------

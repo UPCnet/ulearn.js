@@ -389,19 +389,22 @@ $(document).ready(function (event) {
 
     });
 
+$('#toggle-flash').on('click', '.sliderbutton', function(event) {
+  var dexterity_url = $(this).data()['dextobject'];
+  $.post(dexterity_url + '/toggle_flash');
+});
 
-/*    //Al clicar sobre cualquier campo de los datos del usuario en searchUsers
-    //(ubicació, location, telefon, email) rehace la busqueda con ese valor
+$('#toggle-important').on('click', '.sliderbutton', function(event) {
+  var dexterity_url = $(this).data()['dextobject'];
+  $.post(dexterity_url + '/toggle_important');
+});
 
-    $("#userlist").on("click", ".queryable", function (event) {
-        event.preventDefault()
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-        var query = $(this).parent().find('span').html();
-        $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
-            $('#userlist').html(data);
-        });
-    });
-*/
+$('#toggle-outoflist').on('click', '.sliderbutton', function(event) {
+  var dexterity_url = $(this).data()['dextobject'];
+  $.post(dexterity_url + '/toggle_outoflist');
+});
+
+
+
 
 });

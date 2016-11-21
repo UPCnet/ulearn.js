@@ -109,7 +109,8 @@
           "../ulearn.js/ulearn/js/app/communities/controllers.js",
           "../ulearn.js/ulearn/js/components/angular-maxclient/MAXClient.js",
           "../ulearn.js/ulearn/js/components/angular-maxclient/MAXUtils.js",
-          "../ulearn.theme/ulearn/theme/portlets/custombuttonbar/custombuttonbar.js"
+          "../ulearn.theme/ulearn/theme/portlets/custombuttonbar/custombuttonbar.js",
+          "../ulearn.theme/ulearn/theme/portlets/subscribednews/subscribednews.js"
         ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.app.js"
@@ -135,7 +136,7 @@
     "../genweb.theme/genweb/theme/bootstrap/js": "++bootstrap++js"
   },
   "revision_info": {
-    "../genweb.cdn/genweb/cdn/dist/ulearn.common.js": "../genweb.cdn/genweb/cdn/dist/ulearn.common.06f722b2.js",
-    "../genweb.cdn/genweb/cdn/dist/ulearn.app.js": "../genweb.cdn/genweb/cdn/dist/ulearn.app.83d36a7a.js"
+    "../genweb.cdn/genweb/cdn/dist/ulearn.common.js": "../genweb.cdn/genweb/cdn/dist/ulearn.common.24072756.js",
+    "../genweb.cdn/genweb/cdn/dist/ulearn.app.js": "../genweb.cdn/genweb/cdn/dist/ulearn.app.2168109d.js"
   }
 }

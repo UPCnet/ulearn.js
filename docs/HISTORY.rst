@@ -1,11 +1,17 @@
 Changelog
 =========
 
+2.34 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
 2.33 (2016-11-24)
 -----------------
 
 * add cdn [Paco Gregori]
-* gesti贸n noticias [Paco Gregori]
+* gestič´¸n noticias [Paco Gregori]
 * cdn solucionar problema portlet_calendar [Paco Gregori]
 * set relative url js and make cdn [Paco Gregori]
 

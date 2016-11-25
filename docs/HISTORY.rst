@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.34 (unreleased)
+2.34 (2016-11-25)
 -----------------
 
-- Nothing changed yet.
-
+* cdn searchers news [Paco Gregori]
 
 2.33 (2016-11-24)
 -----------------

@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.35 (unreleased)
+2.35 (2017-02-08)
 -----------------
 
-- Nothing changed yet.
-
+* maquetar el campo facultyCollective para blanquerna [Paco Gregori]
 
 2.34 (2016-11-25)
 -----------------

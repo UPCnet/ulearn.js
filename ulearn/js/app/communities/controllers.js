@@ -207,6 +207,9 @@ GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'Community
     self.portalURL = (CommunityInfo.community_url);
   }
 
+  $scope.getFacultyLabel = function(obj){
+    return obj.replace(/&&/g, ' - ').replace(/\|\|/g, ' , ');
+  }
 
   self.searchby = function (query) {
 

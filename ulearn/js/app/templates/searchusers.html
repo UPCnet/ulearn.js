@@ -63,7 +63,12 @@
                       <span ng-if="(field['name'] != 'email')">
                          <i class="queryable {{field['icon']}}" ng-click="ctrl.searchby(user[field['name']])"></i>
                       </span>
-                      <span>{{user[field['name']]}}</span>
+                      <span ng-if="(field['name'] == 'collectiveFaculty')">
+                        {{ getFacultyLabel(user[field['name']]) }}
+                      </span>
+                      <span ng-if="(field['name'] != 'collectiveFaculty')">
+                        {{ user[field['name']] }}
+                      </span>
                     </p>
                   </span>
                 </div>

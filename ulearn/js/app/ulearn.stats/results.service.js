@@ -40,7 +40,6 @@
 
         ////////////////////
         function Search() {
-            debugger
             self.search_options.stats_requested = self.columns[self.search_type];
             return $http.get(
                         plonePortalURL + '/ulearn-stats-query',

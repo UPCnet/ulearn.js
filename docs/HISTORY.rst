@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.37 (unreleased)
+2.37 (2017-06-08)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn.js [Pilar Marinas]
+* Delete debugger [Iago López Fernández]
 
 2.36 (2017-02-14)
 -----------------

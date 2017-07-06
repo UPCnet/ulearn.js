@@ -64,13 +64,15 @@
               self.group_results = response.data.results;
             });
     };
-    self.selectUser = function ($item) {
+    self.selectUser = function ($item, $model, $select) {
         $item.role = 'reader';
         self.users.push($item);
+        $select.search = '';
     };
-    self.selectGroup = function ($item) {
+    self.selectGroup = function ($item, $model, $select) {
         $item.role = 'reader';
         self.groups.push($item);
+        $select.search = '';
     };
     self.deleteUser = function ($item) {
       self.users = _.without(self.users, _.findWhere(self.users, {id:$item.id}));

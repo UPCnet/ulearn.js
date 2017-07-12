@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.38 (unreleased)
+2.38 (2017-07-12)
 -----------------
 
-- Nothing changed yet.
-
+* grunt js [Pilar Marinas]
+* Netejar valor cercat editacl [Pilar Marinas]
 
 2.37 (2017-06-08)
 -----------------

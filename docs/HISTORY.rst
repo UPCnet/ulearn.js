@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.39 (unreleased)
+2.39 (2017-11-21)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn js [Pilar Marinas]
+* Add NewsInApp Toggle and removed commented code [Roberto Diaz]
 
 2.38 (2017-07-12)
 -----------------

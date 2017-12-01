@@ -7,18 +7,19 @@
  * #
  */
 
-GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate) {
+GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', '$stateParams', '$filter', function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate, $stateParams, $filter) {
   var self = this;
   self.currentPage = 1;
   self.pageSize = 10;
   self.user_subscriptions = [];
   self.user_communities = [];
-
+  self.query = $stateParams.search || '';
   self.prom_allcommunities = $http.get(plonePortalURL+'/api/communities')
     .then(function (response) {
       // All the visible communities for the current user (Open and Closed) used
       // in the iterator of the allcommunities view
       self.communities = response.data;
+      self.communities_bck = response.data;
     }
   );
 
@@ -34,6 +35,26 @@ GenwebApp.controller('AllCommunities', ['_', 'plonePortalURL', 'CommunityInfo', 
         });
       });
   });
+
+  self.searchby = function (qType2) {
+    if(qType2 && qType2!='clear') {
+      self.queryType  = qType2;
+    }else if(qType2 == 'clear'){
+      self.queryType  = '';
+      qType2 = '';
+    }
+    var q = self.query || '';
+    var qType = self.queryType || qType2 || '';
+
+    if (((q.length > 2) || (q.length == 0)) && qType.length == 0 ) {
+      self.communities = $filter('filter')(self.communities_bck, q);
+    }else if (qType.length > 0 && q.length == 0){
+      self.communities = $filter('filter')(self.communities_bck, { type: qType });
+    } else if (qType.length > 0 && q.length > 2) {
+      var temp = $filter('filter')(self.communities_bck, { type: qType });
+      self.communities = $filter('filter')(temp, q);
+    }
+  }
 
   self.toggleFavorite = function (community) {
     $http.post(community.url+'/toggle-favorite')

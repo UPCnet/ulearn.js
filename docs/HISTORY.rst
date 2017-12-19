@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.40 (unreleased)
+2.40 (2017-12-19)
 -----------------
 
-- Nothing changed yet.
-
+* updated version [Roberto Diaz]
+* added gwopa code [Roberto Diaz]
+* updated allcomunities to search by type [Roberto Diaz]
+* added search by community Type [Roberto Diaz]
 
 2.39 (2017-11-21)
 -----------------

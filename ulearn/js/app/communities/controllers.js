@@ -1,5 +1,210 @@
 'use strict';
 
+GenwebApp.controller('AllCommunitiesgwopa', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', '$stateParams', '$filter', function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate, $stateParams, $filter) {
+  var self = this;
+  self.currentPage = 1;
+  self.pageSize = 10;
+  self.user_subscriptions = [];
+  self.user_communities = [];
+  self.query = $stateParams.search || '';
+  self.prom_allcommunities = $http.get(plonePortalURL+'/api/communitiesgwopa')
+    .then(function (response) {
+      // All the visible communities for the current user (Open and Closed) used
+      // in the iterator of the allcommunities view
+      self.communities = response.data;
+      self.communities_bck = response.data;
+      self.user_communities = response.data;
+      self.user_communities_bck = response.data;
+    }
+  );
+
+  UserSubscriptions.query({username: MAXInfo.username, limit: 0, tags: '[COMMUNITY]'})
+    .$promise.then(function (response) {
+      // Holds the list of the URLs of the current user subscriptions
+      self.user_subscriptions = _.pluck(response, 'url');
+      // The user's current subscribed communities full info (merged from all
+      // the site's communities self.communities and self.user_subscriptions
+      self.prom_allcommunities.then(function () {
+        self.user_communities = _.filter(self.communities, function (r) {
+          return _.contains(self.user_subscriptions, r.url);
+        });
+      });
+  });
+
+  self.searchby = function (qType2) {
+    if(qType2 && qType2!='clear') {
+      self.queryType  = qType2;
+      $('.labelCommunitites').css('display','block');
+    }else if(qType2 == 'clear'){
+      self.queryType  = '';
+      qType2 = '';
+      $('.labelCommunitites').css('display','none');
+    }
+
+    var q = self.query || '';
+    var qType = self.queryType || qType2 || '';
+
+    if (((q.length > 2) || (q.length == 0)) && qType.length == 0 ) {
+      self.communities = $filter('filter')(self.communities_bck, q);
+      self.user_communities = $filter('filter')(self.user_communities_bck, q);
+    }else if (qType.length > 0 && q.length == 0){
+      self.communities = $filter('filter')(self.communities_bck, { type: qType });
+      self.user_communities = $filter('filter')(self.user_communities_bck, { type: qType });
+    } else if (qType.length > 0 && q.length > 2) {
+      var temp = $filter('filter')(self.communities_bck, { type: qType });
+      var temp2 = $filter('filter')(self.user_communities_bck, { type: qType });
+      self.communities = $filter('filter')(temp, q);
+      self.user_communities = $filter('filter')(temp2, q);
+    }
+  }
+
+  self.toggleFavorite = function (community) {
+    $http.post(community.url+'/toggle-favorite')
+      .success(function (response) {
+        community.favorited = !community.favorited;
+      })
+      .error(function (response) {
+        $translate(['ALLCOMMUNITIES_VIEW.FAVORITEDERROR'])
+         .then(function (translations) {
+          SweetAlert.swal({
+            title:'Error',
+            description: translations['ALLCOMMUNITIES_VIEW.FAVORITEDERROR'],
+            type:'error',
+            timer: 2000});
+        });
+      });
+  };
+
+  self.subscribe = function (community) {
+    $translate(['COMMUNITY_SUBSCRIBE.TITLE',
+                'COMMUNITY_SUBSCRIBE.SUCCESSBTN',
+                'COMMUNITY_SUBSCRIBE.CANCELBTN',
+                'COMMUNITY_SUBSCRIBE.DONE',
+                'COMMUNITY_SUBSCRIBE.ERROR'])
+     .then(function (translations) {
+        SweetAlert.swal({
+          title: translations['COMMUNITY_SUBSCRIBE.TITLE'],
+          type: 'warning',
+          showCancelButton: true,
+          cancelButtonText: translations['COMMUNITY_SUBSCRIBE.CANCELBTN'],
+          confirmButtonColor: '#60b044',
+          confirmButtonText: translations['COMMUNITY_SUBSCRIBE.SUCCESSBTN']
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+
+            $http.post(community.url+'/subscribe')
+              .success(function (response) {
+                self.user_subscriptions.push(community.url);
+                SweetAlert.swal({
+                    title: translations['COMMUNITY_SUBSCRIBE.DONE'],
+                    type: 'success',
+                    timer: 2000});
+              })
+              .error(function (response) {
+                $translate(['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'])
+                 .then(function (translations) {
+                  SweetAlert.swal({
+                    title:'Error',
+                    description: translations['ALLCOMMUNITIES_VIEW.SUBSCRIBEERROR'],
+                    type:'error',
+                    timer: 2000});
+                });
+              });
+          };
+        });
+    });
+  };
+
+  self.unSubscribe = function (community) {
+    $translate(['COMMUNITY_UNSUBSCRIBE.TITLE',
+                'COMMUNITY_UNSUBSCRIBE.SUCCESSBTN',
+                'COMMUNITY_UNSUBSCRIBE.CANCELBTN',
+                'COMMUNITY_UNSUBSCRIBE.DONE',
+                'COMMUNITY_UNSUBSCRIBE.ERROR'])
+     .then(function (translations) {
+        SweetAlert.swal({
+          title: translations['COMMUNITY_UNSUBSCRIBE.TITLE'],
+          type: 'warning',
+          showCancelButton: true,
+          cancelButtonText: translations['COMMUNITY_UNSUBSCRIBE.CANCELBTN'],
+          confirmButtonColor: '#60b044',
+          confirmButtonText: translations['COMMUNITY_UNSUBSCRIBE.SUCCESSBTN']
+        },
+        function(isConfirm) {
+          if (isConfirm) {
+
+
+            $http.post(community.url+'/unsubscribe')
+              .success(function (response) {
+                self.user_subscriptions.pop(community.url);
+                community.favorited = false;
+                SweetAlert.swal({
+                    title: translations['COMMUNITY_UNSUBSCRIBE.DONE'],
+                    type: 'success',
+                    timer: 2000});
+              })
+              .error(function (response) {
+                $translate(['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'])
+                 .then(function (translations) {
+                  SweetAlert.swal({
+                    title:'Error',
+                    description: translations['ALLCOMMUNITIES_VIEW.UNSUBSCRIBEERROR'],
+                    type:'error',
+                    timer: 2000});
+                });
+              });
+          }
+        });
+  });
+};
+
+  self.delete = function (community) {
+    $translate(['ALLCOMMUNITIES_VIEW.CONFIRMDELETE',
+                'COMMUNITY_SUBSCRIBE.CANCELBTN',
+                'ALLCOMMUNITIES_VIEW.CONFIRMDELETEBTN',
+                'ALLCOMMUNITIES_VIEW.DELETEDONE',
+                'ALLCOMMUNITIES_VIEW.DELETEERROR'])
+     .then(function (translations) {
+      SweetAlert.swal({
+        title: translations['ALLCOMMUNITIES_VIEW.CONFIRMDELETE'],
+        type: 'warning',
+        showCancelButton: true,
+        cancelButtonText: translations['COMMUNITY_SUBSCRIBE.CANCELBTN'],
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: translations['ALLCOMMUNITIES_VIEW.CONFIRMDELETEBTN']
+      },
+      function(isConfirm) {
+        if (isConfirm) {
+          // Delete the community
+          $http.delete(
+            plonePortalURL+'/api/communities/'+community.gwuuid)
+          .success(function() {
+            SweetAlert.swal({
+              title: translations['ALLCOMMUNITIES_VIEW.DELETEDONE'],
+              type: 'success',
+              timer: 2000});
+            // Update community list
+            self.communities = _.without(self.communities, _.findWhere(self.communities, {url: community.url}));
+          })
+          .error(function () {
+            SweetAlert.swal({
+              title: translations['ALLCOMMUNITIES_VIEW.DELETEERROR'],
+              type: 'error',
+              timer: 2000});
+          });
+        }
+      });
+    });
+  };
+
+  self.is_subscribed = function (url) {
+    if (_.contains(self.user_subscriptions, url)) {
+      return true;
+    }
+  };
+}]);
+
 /**
  * @ngdoc overview
  * @name Communities views controllers

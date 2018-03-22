@@ -138,8 +138,9 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'THINNKERS': 'People',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Use the search input to find people. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Showing 100 out of ',
-      'SEARCH': 'Search',
-      'PEOPLE': 'persons.'
+      'SEARCH': 'Search people',
+      'PEOPLE': 'persons.',
+      'NO_USERS': 'No users found.'
     }
   });
 
@@ -208,7 +209,8 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Puede localizar personas con la ayuda del buscador. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Se muestran 100 de ',
       'SEARCH': 'Buscar',
-      'PEOPLE': 'personas.'
+      'PEOPLE': 'personas.',
+      'NO_USERS': 'No se han encontrado usuarios.'
     }
   });
 
@@ -274,10 +276,11 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'SEARCHUSERS':{
       'THINNKERS': 'Persones',
-      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Utilitza el cercador per trobar persones. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Utilitzi el cercador per trobar persones. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Es mostren 100 de ',
       'SEARCH': 'Cercar',
-      'PEOPLE': 'persones.'
+      'PEOPLE': 'persones.',
+      'NO_USERS': 'No s\'han trobat usuaris.'
     }
   });
 

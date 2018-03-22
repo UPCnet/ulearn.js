@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div id="subscribealert" class="alert alert-info" role="alert">
+    <div id="subscribealert" class="alert alert-info" role="alert" ng-if="ctrl.users.big === true">
         <button data-dismiss="alert" class="close" type="button">×</button>
         <p>
         <tal:msg>{{'SEARCHUSERS.USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1' | translate}}
@@ -40,6 +40,11 @@
       </div>
 
       <div ng-if="ctrl.users.big === false">
+        <ul class="sortablelist" 
+           ng-if="ctrl.users.length == 0">
+            <tal:msg>{{'SEARCHUSERS.NO_USERS' | translate}} </tal:msg>
+            <div class="visualClear"><!-- --></div>
+        </ul>
         <ul class="sortablelist"
           ng-if="ctrl.users.length > 0">
           <span dir-paginate="user in ctrl.users.content | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
@@ -79,8 +84,7 @@
         </ul>
       </div>
 
-     <div class="clearfix" ng-if="ctrl.users.big === true">
-     </div>
+     <div class="clearfix" ng-if="ctrl.users.big === true"></div>
 
 
     </section>

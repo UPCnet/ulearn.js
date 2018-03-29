@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.41 (unreleased)
+2.41 (2018-03-29)
 -----------------
 
-- Nothing changed yet.
-
+* Select the active button in the button bar [Pilar Marinas]
+* added users not found translations to find people portlet [Roberto Diaz]
 
 2.40 (2017-12-19)
 -----------------

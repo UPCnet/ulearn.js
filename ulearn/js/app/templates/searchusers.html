@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div id="subscribealert" class="alert alert-info" role="alert" ng-if="ctrl.users.big === true">
+    <div id="subscribealert" class="alert alert-info" role="alert">
         <button data-dismiss="alert" class="close" type="button">×</button>
         <p>
         <tal:msg>{{'SEARCHUSERS.USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1' | translate}}
@@ -24,7 +24,7 @@
         </p>
       </div>
 
-    <div class="pagination">
+    <div class="pagination" ng-if="ctrl.users.big === false">
       <dir-pagination-controls boundary-links="true" template-url="++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
     </div>
 
@@ -40,11 +40,6 @@
       </div>
 
       <div ng-if="ctrl.users.big === false">
-        <ul class="sortablelist" 
-           ng-if="ctrl.users.length == 0">
-            <tal:msg>{{'SEARCHUSERS.NO_USERS' | translate}} </tal:msg>
-            <div class="visualClear"><!-- --></div>
-        </ul>
         <ul class="sortablelist"
           ng-if="ctrl.users.length > 0">
           <span dir-paginate="user in ctrl.users.content | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
@@ -88,7 +83,7 @@
 
 
     </section>
-    <div class="pagination">
+    <div class="pagination" ng-if="ctrl.users.big === false">
       <dir-pagination-controls boundary-links="true" template-url="++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
     </div>
 

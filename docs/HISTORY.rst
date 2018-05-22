@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.42 (unreleased)
+2.42 (2018-05-22)
 -----------------
 
-- Nothing changed yet.
-
+* Update searchusers.html [Roberto Diaz]
+*  [Roberto Diaz]
+* Adding separation between search box and pagitation, to view it centered in page. [Roberto Diaz]
+* removed pagination if more than 100... [root]
 
 2.41 (2018-03-29)
 -----------------

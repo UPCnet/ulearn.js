@@ -1,7 +1,6 @@
 'use strict';
 
 GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider', function ($translateProvider, $stateProvider,$urlRouterProvider,$locationProvider) {
-
     $urlRouterProvider.otherwise('/');
     $stateProvider
             .state('root', {
@@ -136,7 +135,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'SEARCHUSERS':{
       'THINNKERS': 'People',
-      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Use the search input to find people. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Use the search input to find people. Introduce the word to search and press the key "Enter" to make the search. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Showing 100 out of ',
       'SEARCH': 'Search people',
       'PEOPLE': 'persons.',
@@ -206,7 +205,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'SEARCHUSERS':{
       'THINNKERS': 'Personas',
-      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Puede localizar personas con la ayuda del buscador. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Puede localizar personas con la ayuda del buscador. Introduzca la palabra a buscar y la tecla "Enter" para hacer la busqueda. ',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Se muestran 100 de ',
       'SEARCH': 'Buscar',
       'PEOPLE': 'personas.',
@@ -276,7 +275,7 @@ GenwebApp.config(['$translateProvider', '$stateProvider', '$urlRouterProvider', 
     },
     'SEARCHUSERS':{
       'THINNKERS': 'Persones',
-      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Utilitzi el cercador per trobar persones. ',
+      'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE1': 'Utilitzi el cercador per trobar persones. Introdueixi la paraula a cercar i premi la tecla "Enter" per a fer la cerca.',
       'USE_THE_SEARCH_INPUT_TO_FIND_MORE_PEOPLE2': 'Es mostren 100 de ',
       'SEARCH': 'Cercar',
       'PEOPLE': 'persones.',

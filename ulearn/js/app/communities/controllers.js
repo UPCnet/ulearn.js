@@ -423,7 +423,7 @@ GenwebApp.controller('SharedWithMe', ['_', 'plonePortalURL', 'CommunityInfo', 'U
 
 }]);
 
-GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', '$scope', '$stateParams', function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate, $scope, $stateParams) {
+GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'CommunityInfo', 'UserSubscriptions', 'SweetAlert', 'MAXInfo', '$http', '$window', '$timeout', '$translate', '$scope', '$stateParams',  function (_, plonePortalURL, CommunityInfo, UserSubscriptions, SweetAlert, MAXInfo, $http, $window, $timeout, $translate, $scope, $stateParams) {
   var self = this;
   self.currentPage = 1;
   self.query = $stateParams.search || '';
@@ -446,8 +446,8 @@ GenwebApp.controller('SearchUsersController', ['_', 'plonePortalURL', 'Community
     }
 
     self.query = q;
-    if ((q.length > 2) || (q.length == 0)) {
-      self.response = $http.get(self.portalURL+'/searchUser', {params: {search: q}})
+    if  ((q.length == 0) || (event.key == "Enter")) {
+	self.response = $http.get(self.portalURL+'/searchUser', {params: {search: q}})
         .then(function (response) {
           self.big = response.data.users.big;
           self.users = response.data.users;

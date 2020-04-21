@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.43 (unreleased)
+2.43 (2020-04-21)
 -----------------
 
-- Nothing changed yet.
-
+* Modificar que la vista directorio si hay muchos usuarios no muestre nada hasta que escribas y de les al Enter [root]
 
 2.42 (2018-05-22)
 -----------------
